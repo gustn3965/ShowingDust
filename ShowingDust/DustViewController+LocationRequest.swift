@@ -13,6 +13,7 @@ extension DustViewController: CLLocationManagerDelegate {
     func getUserLocation()  {
         if checkAuthorization() {
             print(locationManager.location)
+            locationManager.location?.coordinate.longitude
         }
     }
 

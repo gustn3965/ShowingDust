@@ -14,6 +14,10 @@
 		DBA3E04D263FEF8400DEB36A /* DustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E04C263FEF8400DEB36A /* DustViewController.swift */; };
 		DBA3E04F263FEF9300DEB36A /* Dust.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA3E04E263FEF9300DEB36A /* Dust.storyboard */; };
 		DBA3E056263FF8D500DEB36A /* DustViewController+LocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E055263FF8D500DEB36A /* DustViewController+LocationRequest.swift */; };
+		DBA3E05C2640198200DEB36A /* StationCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E05B2640198200DEB36A /* StationCodable.swift */; };
+		DBA3E06026401B8F00DEB36A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E05F26401B8F00DEB36A /* Session.swift */; };
+		DBA3E06226401DA500DEB36A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E06126401DA500DEB36A /* Request.swift */; };
+		DBA3E06526401E5A00DEB36A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E06426401E5A00DEB36A /* Key.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		DBA3E04C263FEF8400DEB36A /* DustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustViewController.swift; sourceTree = "<group>"; };
 		DBA3E04E263FEF9300DEB36A /* Dust.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dust.storyboard; sourceTree = "<group>"; };
 		DBA3E055263FF8D500DEB36A /* DustViewController+LocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DustViewController+LocationRequest.swift"; sourceTree = "<group>"; };
+		DBA3E05B2640198200DEB36A /* StationCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCodable.swift; sourceTree = "<group>"; };
+		DBA3E05F26401B8F00DEB36A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		DBA3E06126401DA500DEB36A /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		DBA3E06426401E5A00DEB36A /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,9 @@
 		DBA3E037263FED5200DEB36A /* ShowingDust */ = {
 			isa = PBXGroup;
 			children = (
+				DBA3E06326401E5200DEB36A /* KEY */,
+				DBA3E05E26401B8500DEB36A /* ViewModel */,
+				DBA3E05D2640199400DEB36A /* Codable */,
 				DBA3E0592640191C00DEB36A /* AppDelegate */,
 				DBA3E0582640190A00DEB36A /* Storyboard */,
 				DBA3E057264018FE00DEB36A /* ViewController */,
@@ -92,6 +103,31 @@
 				DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */,
 			);
 			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		DBA3E05D2640199400DEB36A /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				DBA3E05B2640198200DEB36A /* StationCodable.swift */,
+			);
+			name = Codable;
+			sourceTree = "<group>";
+		};
+		DBA3E05E26401B8500DEB36A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DBA3E05F26401B8F00DEB36A /* Session.swift */,
+				DBA3E06126401DA500DEB36A /* Request.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		DBA3E06326401E5200DEB36A /* KEY */ = {
+			isa = PBXGroup;
+			children = (
+				DBA3E06426401E5A00DEB36A /* Key.swift */,
+			);
+			name = KEY;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +202,12 @@
 			files = (
 				DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */,
 				DBA3E04D263FEF8400DEB36A /* DustViewController.swift in Sources */,
+				DBA3E06026401B8F00DEB36A /* Session.swift in Sources */,
 				DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */,
+				DBA3E06226401DA500DEB36A /* Request.swift in Sources */,
+				DBA3E06526401E5A00DEB36A /* Key.swift in Sources */,
 				DBA3E056263FF8D500DEB36A /* DustViewController+LocationRequest.swift in Sources */,
+				DBA3E05C2640198200DEB36A /* StationCodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
