@@ -13,6 +13,7 @@
 		DBA3E045263FED5300DEB36A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA3E043263FED5300DEB36A /* LaunchScreen.storyboard */; };
 		DBA3E04D263FEF8400DEB36A /* DustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E04C263FEF8400DEB36A /* DustViewController.swift */; };
 		DBA3E04F263FEF9300DEB36A /* Dust.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA3E04E263FEF9300DEB36A /* Dust.storyboard */; };
+		DBA3E056263FF8D500DEB36A /* DustViewController+LocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E055263FF8D500DEB36A /* DustViewController+LocationRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DBA3E046263FED5300DEB36A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBA3E04C263FEF8400DEB36A /* DustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustViewController.swift; sourceTree = "<group>"; };
 		DBA3E04E263FEF9300DEB36A /* Dust.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dust.storyboard; sourceTree = "<group>"; };
+		DBA3E055263FF8D500DEB36A /* DustViewController+LocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DustViewController+LocationRequest.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		DBA3E037263FED5200DEB36A /* ShowingDust */ = {
 			isa = PBXGroup;
 			children = (
-				DBA3E038263FED5200DEB36A /* AppDelegate.swift */,
-				DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */,
+				DBA3E0592640191C00DEB36A /* AppDelegate */,
+				DBA3E0582640190A00DEB36A /* Storyboard */,
+				DBA3E057264018FE00DEB36A /* ViewController */,
 				DBA3E041263FED5300DEB36A /* Assets.xcassets */,
 				DBA3E043263FED5300DEB36A /* LaunchScreen.storyboard */,
 				DBA3E046263FED5300DEB36A /* Info.plist */,
-				DBA3E04C263FEF8400DEB36A /* DustViewController.swift */,
-				DBA3E04E263FEF9300DEB36A /* Dust.storyboard */,
 			);
 			path = ShowingDust;
+			sourceTree = "<group>";
+		};
+		DBA3E057264018FE00DEB36A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DBA3E04C263FEF8400DEB36A /* DustViewController.swift */,
+				DBA3E055263FF8D500DEB36A /* DustViewController+LocationRequest.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		DBA3E0582640190A00DEB36A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DBA3E04E263FEF9300DEB36A /* Dust.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		DBA3E0592640191C00DEB36A /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DBA3E038263FED5200DEB36A /* AppDelegate.swift */,
+				DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */,
+			);
+			name = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +167,7 @@
 				DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */,
 				DBA3E04D263FEF8400DEB36A /* DustViewController.swift in Sources */,
 				DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */,
+				DBA3E056263FF8D500DEB36A /* DustViewController+LocationRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WVLV77R6X7;
 				INFOPLIST_FILE = ShowingDust/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,6 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WVLV77R6X7;
 				INFOPLIST_FILE = ShowingDust/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
