@@ -22,6 +22,7 @@
 		DBA3E08726402F1300DEB36A /* JSONCodability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E08626402F1300DEB36A /* JSONCodability.swift */; };
 		DBA3E0892640392000DEB36A /* DustViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E0882640392000DEB36A /* DustViewModel.swift */; };
 		DBA3E08B2640395A00DEB36A /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E08A2640395A00DEB36A /* URLType.swift */; };
+		DBD0C46A26413B5000291011 /* DustCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46926413B5000291011 /* DustCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		DBA3E08626402F1300DEB36A /* JSONCodability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCodability.swift; sourceTree = "<group>"; };
 		DBA3E0882640392000DEB36A /* DustViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustViewModel.swift; sourceTree = "<group>"; };
 		DBA3E08A2640395A00DEB36A /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
+		DBD0C46926413B5000291011 /* DustCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				DBA3E05B2640198200DEB36A /* StationCodable.swift */,
+				DBD0C46926413B5000291011 /* DustCodable.swift */,
 			);
 			name = Codable;
 			sourceTree = "<group>";
@@ -147,8 +150,8 @@
 			children = (
 				DBA3E05F26401B8F00DEB36A /* Session.swift */,
 				DBA3E08626402F1300DEB36A /* JSONCodability.swift */,
-				DBA3E0882640392000DEB36A /* DustViewModel.swift */,
 				DBA3E08A2640395A00DEB36A /* URLType.swift */,
+				DBA3E0882640392000DEB36A /* DustViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */,
 				DBA3E04D263FEF8400DEB36A /* DustViewController.swift in Sources */,
 				DBA3E0892640392000DEB36A /* DustViewModel.swift in Sources */,
+				DBD0C46A26413B5000291011 /* DustCodable.swift in Sources */,
 				DBA3E06026401B8F00DEB36A /* Session.swift in Sources */,
 				DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */,
 				DBA3E08B2640395A00DEB36A /* URLType.swift in Sources */,
