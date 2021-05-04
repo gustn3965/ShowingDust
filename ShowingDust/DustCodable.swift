@@ -33,8 +33,10 @@ struct DustBody: Codable {
 struct Dust: Codable {
     var dateTime: String
     var dust: Int
+    var total: Int
     enum CodingKeys: String, CodingKey {
         case dust = "pm10Value"
+        case total = "khaiValue"
         case dateTime
     }
 }
