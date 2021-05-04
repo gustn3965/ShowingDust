@@ -7,9 +7,47 @@
 
 import Foundation
 
-struct StationCode: Codable {
-    var resultCode: Int
-    var resultMsg: String
+
+protocol ResultCode {
+    var resultCode: OpenAPIError { get }
+}
+protocol OpenAPIError {
+    var code: String { get set }
+    var message: String { get set }
+}
+/*
+ StationRoot
+    - StationResponse
+        - ErrorCode
+        - StationItems
+            - Station
+ 
+ */
+struct StationRoot: Codable, ResultCode {
+    var response: StationResponse
+
+    var stationlist: [Station] {
+        return response.body.items
+    }
+    var resultCode: OpenAPIError {
+        return response.header
+    }
+}
+struct StationResponse: Codable {
+    var header: ErrorCode
+    var body: StationItems
+}
+struct ErrorCode: Codable, OpenAPIError {
+    var code: String
+    var message: String
+    
+    enum CodingKeys: String, CodingKey {
+        case code = "resultCode"
+        case message =  "resultMsg"
+    }
+}
+
+struct StationItems: Codable {
     var items: [Station]
 }
 

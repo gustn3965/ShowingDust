@@ -18,6 +18,16 @@ class DustViewController: UIViewController {
     // TODO: - 유저위치 권한받아오기
     @IBAction func touchpUpCurrent() {
         getUserLocation()
+        DustViewModel<StationRoot>()
+            .getInformation(by: .recentStationList( CLLocationCoordinate2D(latitude: 244148.546388, longitude: 412423.75772))) { result in
+            do {
+                let stationData = try result.get()
+                print("-")
+                print(stationData.stationlist)
+            } catch {
+                print(error)
+            }
+        }
     }
 }
 
