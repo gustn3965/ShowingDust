@@ -34,10 +34,10 @@ struct StationRoot: Codable, ResultCode {
     }
 }
 struct StationResponse: Codable {
-    var header: ErrorCode
-    var body: StationItems
+    var header: StationHeader
+    var body: StationBody
 }
-struct ErrorCode: Codable, OpenAPIError {
+struct StationHeader: Codable, OpenAPIError {
     var code: String
     var message: String
     
@@ -47,7 +47,7 @@ struct ErrorCode: Codable, OpenAPIError {
     }
 }
 
-struct StationItems: Codable {
+struct StationBody: Codable {
     var items: [Station]
 }
 
