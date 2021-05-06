@@ -10,23 +10,16 @@ import CoreLocation
 class DustViewController: UIViewController {
     @IBOutlet var progressBar: UIActivityIndicatorView!
     let locationManager = CLLocationManager()
-    let label = UILabel()
+    
+    @IBOutlet weak var dustLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var localLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     let dustViewModel = DustViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
-        
-        
-        label.text = "what🤔"
-        label.numberOfLines = 0
-        
-        var attributedString = NSMutableAttributedString(string:label.text!)
-        attributedString.addAttribute(.backgroundColor, value: UIColor.red, range: NSRange(label.text!.range(of: "🤔")!, in: label.text!))
-        label.attributedText = attributedString
-        
-        self.view.addSubview(label)
-        label.frame = CGRect(x: 100, y: 100, width: 200, height: 100)
     }
     
     // TODO: - 유저위치 권한받아오기
@@ -38,7 +31,10 @@ class DustViewController: UIViewController {
                     do {
                         let result = try data.get()
                         DispatchQueue.main.async {
-                            self.label.text =  "미세먼지: \(result.dust) \n통합대기측정: \(result.total)\n지역:\(name)\n시간:\(result.dataTime)"
+                            self.dustLabel.text = result.dustText
+                            self.totalLabel.text = result.totalText
+                            self.localLabel.text = name
+                            self.timeLabel.text = result.dataTime
                             self.stopProgressBar()
                             self.changeBackgroundColorBy(dust: result)
                         }
@@ -50,6 +46,8 @@ class DustViewController: UIViewController {
             }
         }
     }
+    
+    
     
     func startProgressBar() {
         DispatchQueue.excuteOnMainQueue {

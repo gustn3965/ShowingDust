@@ -42,4 +42,7 @@ struct Dust: Codable {
         case total = "khaiValue"
         case dataTime
     }
+    
+    var dustText: String { return "미세먼지: \(dust)"}
+    var totalText: String { return "통합대기지수: \(total)"}
 }

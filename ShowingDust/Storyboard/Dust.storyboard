@@ -34,18 +34,58 @@
                                 </constraints>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZTR-yC-pRU">
+                                <rect key="frame" x="182" y="181" width="50" height="215"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="y1N-Y7-FdX">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="215"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1WQ-eu-QUe">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdx-tG-MLX">
+                                                <rect key="frame" x="0.0" y="55" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3er-hS-nk0">
+                                                <rect key="frame" x="0.0" y="110" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTZ-UB-mvb">
+                                                <rect key="frame" x="0.0" y="165" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstItem="b3S-tu-RrA" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="1Qr-Ls-qrW"/>
+                            <constraint firstItem="QnT-oU-06a" firstAttribute="top" secondItem="ZTR-yC-pRU" secondAttribute="bottom" constant="30" id="7Ww-zA-Uar"/>
+                            <constraint firstItem="ZTR-yC-pRU" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="9Vm-yF-39v"/>
                             <constraint firstItem="QnT-oU-06a" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="SmF-c0-ZrD"/>
                             <constraint firstItem="QnT-oU-06a" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="gzv-Uf-KVU"/>
                             <constraint firstItem="b3S-tu-RrA" firstAttribute="top" secondItem="QnT-oU-06a" secondAttribute="bottom" constant="20" id="mpq-lo-c1n"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dustLabel" destination="vdx-tG-MLX" id="bzL-Oa-iho"/>
+                        <outlet property="localLabel" destination="iTZ-UB-mvb" id="12w-wa-h3U"/>
                         <outlet property="progressBar" destination="b3S-tu-RrA" id="aiE-Jz-Pxm"/>
+                        <outlet property="timeLabel" destination="iTZ-UB-mvb" id="64p-Wh-UCr"/>
+                        <outlet property="totalLabel" destination="3er-hS-nk0" id="Q78-1s-o6e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
