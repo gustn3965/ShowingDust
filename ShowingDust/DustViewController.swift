@@ -16,10 +16,13 @@ class DustViewController: UIViewController {
     @IBOutlet weak var localLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var hitLabel: UILabel!
     let dustViewModel = DustViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
+        testHitCacheOrDisk()
     }
     
     // TODO: - 유저위치 권한받아오기
@@ -27,14 +30,15 @@ class DustViewController: UIViewController {
         DispatchQueue.global().async {
             self.startProgressBar()
             self.getUserLocation { name in
-                self.dustViewModel.getDust(by: .gettingTMByCity(name)) { data in
+                self.dustViewModel.getDust(by: name) { data in
                     do {
                         let result = try data.get()
+                        print("---")
                         DispatchQueue.main.async {
                             self.dustLabel.text = result.dustText
                             self.totalLabel.text = result.totalText
                             self.localLabel.text = name
-                            self.timeLabel.text = result.dataTime
+                            self.timeLabel.text = result.dateTime
                             self.stopProgressBar()
                             self.changeBackgroundColorBy(dust: result)
                         }
@@ -44,6 +48,17 @@ class DustViewController: UIViewController {
                     }
                 }
             }
+        }
+    }
+    
+    func testHitCacheOrDisk() {
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveHit), name: Notification.Name(rawValue: "CacheHit"), object: nil)
+    }
+    @objc func receiveHit(_ notification: Notification) {
+        let key = Notification.Name(rawValue: "CacheHit")
+        guard let data = notification.userInfo?[key] as? String else { return }
+        DispatchQueue.excuteOnMainQueue {
+            self.hitLabel.text = data 
         }
     }
     
@@ -67,11 +82,13 @@ class DustViewController: UIViewController {
         DispatchQueue.excuteOnMainQueue {
             switch value {
             case 0..<31 :
-                self.view.backgroundColor = .systemBlue
+                self.view.backgroundColor = #colorLiteral(red: 0.75, green: 0.86, blue: 0.98, alpha: 1.00)
             case 31..<71:
                 self.view.backgroundColor = .orange
+            case 71..<101:
+                self.view.backgroundColor = #colorLiteral(red: 0.83, green: 0.25, blue: 0.00, alpha: 1.00)
             default:
-                self.view.backgroundColor = .red
+                self.view.backgroundColor = #colorLiteral(red: 0.22, green: 0.24, blue: 0.27, alpha: 1.00)
             }
         }
         

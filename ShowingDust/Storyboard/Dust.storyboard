@@ -68,20 +68,29 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvi-L1-DbP">
+                                <rect key="frame" x="207" y="574" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstItem="b3S-tu-RrA" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="1Qr-Ls-qrW"/>
+                            <constraint firstItem="Jvi-L1-DbP" firstAttribute="top" secondItem="b3S-tu-RrA" secondAttribute="bottom" constant="34" id="6n1-mg-zDT"/>
                             <constraint firstItem="QnT-oU-06a" firstAttribute="top" secondItem="ZTR-yC-pRU" secondAttribute="bottom" constant="30" id="7Ww-zA-Uar"/>
                             <constraint firstItem="ZTR-yC-pRU" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="9Vm-yF-39v"/>
                             <constraint firstItem="QnT-oU-06a" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="SmF-c0-ZrD"/>
+                            <constraint firstItem="Jvi-L1-DbP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="SnJ-25-EMw"/>
                             <constraint firstItem="QnT-oU-06a" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="gzv-Uf-KVU"/>
                             <constraint firstItem="b3S-tu-RrA" firstAttribute="top" secondItem="QnT-oU-06a" secondAttribute="bottom" constant="20" id="mpq-lo-c1n"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dustLabel" destination="vdx-tG-MLX" id="bzL-Oa-iho"/>
+                        <outlet property="hitLabel" destination="Jvi-L1-DbP" id="36D-xG-XSY"/>
                         <outlet property="localLabel" destination="iTZ-UB-mvb" id="12w-wa-h3U"/>
                         <outlet property="progressBar" destination="b3S-tu-RrA" id="aiE-Jz-Pxm"/>
                         <outlet property="timeLabel" destination="iTZ-UB-mvb" id="64p-Wh-UCr"/>

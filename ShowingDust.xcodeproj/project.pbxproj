@@ -10,6 +10,8 @@
 		DB114EFD2643D8A80071591E /* ServerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114EFC2643D8A80071591E /* ServerViewModel.swift */; };
 		DB114F002643E7FC0071591E /* DispatchQueueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */; };
 		DB114F032643EC740071591E /* CommonCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F022643EC740071591E /* CommonCodable.swift */; };
+		DB114F0626441BAC0071591E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F0526441BAC0071591E /* Cache.swift */; };
+		DB114F08264420810071591E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F07264420810071591E /* DateExtension.swift */; };
 		DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E038263FED5200DEB36A /* AppDelegate.swift */; };
 		DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */; };
 		DBA3E042263FED5300DEB36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA3E041263FED5300DEB36A /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 		DB114EFC2643D8A80071591E /* ServerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModel.swift; sourceTree = "<group>"; };
 		DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
 		DB114F022643EC740071591E /* CommonCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCodable.swift; sourceTree = "<group>"; };
+		DB114F0526441BAC0071591E /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		DB114F07264420810071591E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		DBA3E035263FED5200DEB36A /* ShowingDust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowingDust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA3E038263FED5200DEB36A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */,
+				DB114F07264420810071591E /* DateExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				DBA3E08A2640395A00DEB36A /* URLType.swift */,
 				DB114EFC2643D8A80071591E /* ServerViewModel.swift */,
 				DBA3E0882640392000DEB36A /* DustViewModel.swift */,
+				DB114F0526441BAC0071591E /* Cache.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */,
+				DB114F08264420810071591E /* DateExtension.swift in Sources */,
 				DBA3E04D263FEF8400DEB36A /* DustViewController.swift in Sources */,
 				DBA3E0892640392000DEB36A /* DustViewModel.swift in Sources */,
 				DBD0C46A26413B5000291011 /* DustCodable.swift in Sources */,
@@ -312,6 +319,7 @@
 				DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */,
 				DBA3E08B2640395A00DEB36A /* URLType.swift in Sources */,
 				DB114F032643EC740071591E /* CommonCodable.swift in Sources */,
+				DB114F0626441BAC0071591E /* Cache.swift in Sources */,
 				DBA3E06526401E5A00DEB36A /* Key.swift in Sources */,
 				DBA3E056263FF8D500DEB36A /* DustViewController+LocationRequest.swift in Sources */,
 				DBA3E05C2640198200DEB36A /* StationCodable.swift in Sources */,

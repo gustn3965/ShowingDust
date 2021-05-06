@@ -17,13 +17,21 @@ final class DustViewModel {
     let stationViewModel = ServerViewModel<StationRoot>()
     let dustViewModel = ServerViewModel<DustRoot>()
     
-    
+    let cache = Cache()
     /// 미세먼지 정보만 가져오는 메서드
     /// - Parameters:
-    ///   - urlType: 타입을 지정할 수 있지만,  Controller에서 사용하는 경우는 위치이름만 넣도록한다.
+    ///   - name: 현재 지역 이름
     ///   - completion: 가져온 데이터가 성공적인지 실패인지 받는 클로저
-    func getDust(by urlType: URLType, completion: @escaping ( (Result<Dust, TaskError>) -> Void )) {
-        tmViewModel.getInformation(by: urlType) { resultTM  in
+    func getDust(by name: String, completion: @escaping ( (Result<Dust, TaskError>) -> Void )) {
+        
+        // 캐시에 있는지 우선 확인.
+        if let cached = cache.fetchBy(key: name, date: Date.getCurrentHour() ) {
+            completion(.success(cached))
+            return
+        }
+        
+        //캐시에 없다면 API호출
+        tmViewModel.getInformation(by: URLType.gettingTMByCity(name)) { resultTM  in
             switch resultTM {
             case .failure(let err): completion(.failure(err))
             case .success(let tmRoot):
@@ -38,35 +46,40 @@ final class DustViewModel {
                             case .failure(let err): completion(.failure(err))
                             case .success(let dustRoot):
                                 completion(.success(dustRoot.dust!.items[0]))
+                                
+                                    self.cache.save(object: dustRoot.dust!.items[0],
+                                                    date: dustRoot.dust!.items[0].date,
+                                                    key: name)
+                                
                             }
                         }
                     }
                 }
             }
-//            do {
-//                let tmLocation = try resultTM.get().tms![0]
-//
-//                self.stationViewModel.getInformation(by: URLType.recentStationByTM(tmLocation)) { locaitons in
-//                    do {
-//                        let location = try locaitons.get().stationlist![0]
-//
-//                        self.dustViewModel.getInformation(
-//                            by: .dustInforByStation(staion: location.stationName,
-//                                                    dateTerm: .day)) { dustData in
-//                            do {
-//                                let dust = try dustData.get().dust
-//                                completion(.success(dust!.items[0]))
-//                            } catch {
-//                                completion(.failure(error as! TaskError))
-//                            }
-//                        }
-//                    } catch {
-//                        completion(.failure(error as! TaskError))
-//                    }
-//                }
-//            } catch {
-//                completion(.failure(error as! TaskError))
-//            }
+            //            do {
+            //                let tmLocation = try resultTM.get().tms![0]
+            //
+            //                self.stationViewModel.getInformation(by: URLType.recentStationByTM(tmLocation)) { locaitons in
+            //                    do {
+            //                        let location = try locaitons.get().stationlist![0]
+            //
+            //                        self.dustViewModel.getInformation(
+            //                            by: .dustInforByStation(staion: location.stationName,
+            //                                                    dateTerm: .day)) { dustData in
+            //                            do {
+            //                                let dust = try dustData.get().dust
+            //                                completion(.success(dust!.items[0]))
+            //                            } catch {
+            //                                completion(.failure(error as! TaskError))
+            //                            }
+            //                        }
+            //                    } catch {
+            //                        completion(.failure(error as! TaskError))
+            //                    }
+            //                }
+            //            } catch {
+            //                completion(.failure(error as! TaskError))
+            //            }
             
         }
         
