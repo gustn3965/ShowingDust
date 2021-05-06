@@ -6,15 +6,6 @@
 //
 
 import Foundation
-
-
-protocol ResultCode {
-    var resultCode: OpenAPIError { get }
-}
-protocol OpenAPIError {
-    var code: String { get set }
-    var message: String { get set }
-}
 /*
  StationRoot
     - StationResponse
@@ -26,8 +17,8 @@ protocol OpenAPIError {
 struct StationRoot: Codable, ResultCode {
     var response: StationResponse
 
-    var stationlist: [Station] {
-        return response.body.items
+    var stationlist: [Station]? {
+        return response.body?.items
     }
     var resultCode: OpenAPIError {
         return response.header
@@ -35,7 +26,7 @@ struct StationRoot: Codable, ResultCode {
 }
 struct StationResponse: Codable {
     var header: StationHeader
-    var body: StationBody
+    var body: StationBody?
 }
 struct StationHeader: Codable, OpenAPIError {
     var code: String

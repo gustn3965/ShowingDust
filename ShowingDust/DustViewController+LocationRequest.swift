@@ -7,15 +7,28 @@
 
 
 import CoreLocation
-
 extension DustViewController: CLLocationManagerDelegate {
 
-    func getUserLocation()  {
+    func getUserLocation(completion: @escaping (String) -> Void  ) {
         if checkAuthorization() {
-            print(locationManager.location)
-            locationManager.location?.coordinate.longitude
+            guard let loc = locationManager.location else { return }
+            
+            convertLocationToGeocode(loc: loc) { str in
+                completion(str)
+            }
         }
     }
+    
+    func convertLocationToGeocode(loc: CLLocation?, completion: @escaping (String) -> Void ) {
+        guard let loc = loc else { return }
+        CLGeocoder().reverseGeocodeLocation(loc, preferredLocale: Locale(identifier: "Ko-kr")) { resultList, error in
+            guard error == nil else { return }
+            guard let list = resultList, let location = list.first else { return }
+            print(location)
+            completion(location.locality!)
+        }
+    }
+    
 
     func checkAuthorization() -> Bool {
         switch locationManager.authorizationStatus {
@@ -30,15 +43,15 @@ extension DustViewController: CLLocationManagerDelegate {
     }
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        switch locationManager.authorizationStatus {
-        case .authorizedAlways:
-            getUserLocation()
-        case .authorizedWhenInUse:
-            locationManager.requestAlwaysAuthorization()
-            getUserLocation()
-        default:
-            return
-        }
+//        switch locationManager.authorizationStatus {
+//        case .authorizedAlways:
+//            getUserLocation()
+//        case .authorizedWhenInUse:
+//            locationManager.requestAlwaysAuthorization()
+//            getUserLocation()
+//        default:
+//            return
+//        }
     }
 
     

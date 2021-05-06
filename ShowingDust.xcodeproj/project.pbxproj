@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB114EFD2643D8A80071591E /* ServerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114EFC2643D8A80071591E /* ServerViewModel.swift */; };
+		DB114F002643E7FC0071591E /* DispatchQueueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */; };
+		DB114F032643EC740071591E /* CommonCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F022643EC740071591E /* CommonCodable.swift */; };
 		DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E038263FED5200DEB36A /* AppDelegate.swift */; };
 		DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */; };
 		DBA3E042263FED5300DEB36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA3E041263FED5300DEB36A /* Assets.xcassets */; };
@@ -23,6 +26,7 @@
 		DBA3E0892640392000DEB36A /* DustViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E0882640392000DEB36A /* DustViewModel.swift */; };
 		DBA3E08B2640395A00DEB36A /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E08A2640395A00DEB36A /* URLType.swift */; };
 		DBD0C46A26413B5000291011 /* DustCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46926413B5000291011 /* DustCodable.swift */; };
+		DBD0C46C2641486300291011 /* TMCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46B2641486300291011 /* TMCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB114EFC2643D8A80071591E /* ServerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModel.swift; sourceTree = "<group>"; };
+		DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
+		DB114F022643EC740071591E /* CommonCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCodable.swift; sourceTree = "<group>"; };
 		DBA3E035263FED5200DEB36A /* ShowingDust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowingDust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA3E038263FED5200DEB36A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +63,7 @@
 		DBA3E0882640392000DEB36A /* DustViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustViewModel.swift; sourceTree = "<group>"; };
 		DBA3E08A2640395A00DEB36A /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
 		DBD0C46926413B5000291011 /* DustCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustCodable.swift; sourceTree = "<group>"; };
+		DBD0C46B2641486300291011 /* TMCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB114F012643E8660071591E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		DB114F042643EC920071591E /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				DBA3E041263FED5300DEB36A /* Assets.xcassets */,
+			);
+			name = Asset;
+			sourceTree = "<group>";
+		};
 		DBA3E02C263FED5200DEB36A = {
 			isa = PBXGroup;
 			children = (
@@ -97,14 +121,14 @@
 		DBA3E037263FED5200DEB36A /* ShowingDust */ = {
 			isa = PBXGroup;
 			children = (
+				DB114F042643EC920071591E /* Asset */,
+				DB114F012643E8660071591E /* Extension */,
 				DBA3E06326401E5200DEB36A /* KEY */,
 				DBA3E05E26401B8500DEB36A /* ViewModel */,
 				DBA3E05D2640199400DEB36A /* Codable */,
-				DBA3E0592640191C00DEB36A /* AppDelegate */,
 				DBA3E0582640190A00DEB36A /* Storyboard */,
 				DBA3E057264018FE00DEB36A /* ViewController */,
-				DBA3E041263FED5300DEB36A /* Assets.xcassets */,
-				DBA3E043263FED5300DEB36A /* LaunchScreen.storyboard */,
+				DBA3E0592640191C00DEB36A /* AppDelegate */,
 				DBA3E046263FED5300DEB36A /* Info.plist */,
 			);
 			path = ShowingDust;
@@ -122,6 +146,7 @@
 		DBA3E0582640190A00DEB36A /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				DBA3E043263FED5300DEB36A /* LaunchScreen.storyboard */,
 				DBA3E04E263FEF9300DEB36A /* Dust.storyboard */,
 			);
 			path = Storyboard;
@@ -139,6 +164,8 @@
 		DBA3E05D2640199400DEB36A /* Codable */ = {
 			isa = PBXGroup;
 			children = (
+				DB114F022643EC740071591E /* CommonCodable.swift */,
+				DBD0C46B2641486300291011 /* TMCodable.swift */,
 				DBA3E05B2640198200DEB36A /* StationCodable.swift */,
 				DBD0C46926413B5000291011 /* DustCodable.swift */,
 			);
@@ -148,9 +175,10 @@
 		DBA3E05E26401B8500DEB36A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				DBA3E05F26401B8F00DEB36A /* Session.swift */,
 				DBA3E08626402F1300DEB36A /* JSONCodability.swift */,
+				DBA3E05F26401B8F00DEB36A /* Session.swift */,
 				DBA3E08A2640395A00DEB36A /* URLType.swift */,
+				DB114EFC2643D8A80071591E /* ServerViewModel.swift */,
 				DBA3E0882640392000DEB36A /* DustViewModel.swift */,
 			);
 			name = ViewModel;
@@ -279,11 +307,15 @@
 				DBA3E0892640392000DEB36A /* DustViewModel.swift in Sources */,
 				DBD0C46A26413B5000291011 /* DustCodable.swift in Sources */,
 				DBA3E06026401B8F00DEB36A /* Session.swift in Sources */,
+				DB114F002643E7FC0071591E /* DispatchQueueExtension.swift in Sources */,
+				DBD0C46C2641486300291011 /* TMCodable.swift in Sources */,
 				DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */,
 				DBA3E08B2640395A00DEB36A /* URLType.swift in Sources */,
+				DB114F032643EC740071591E /* CommonCodable.swift in Sources */,
 				DBA3E06526401E5A00DEB36A /* Key.swift in Sources */,
 				DBA3E056263FF8D500DEB36A /* DustViewController+LocationRequest.swift in Sources */,
 				DBA3E05C2640198200DEB36A /* StationCodable.swift in Sources */,
+				DB114EFD2643D8A80071591E /* ServerViewModel.swift in Sources */,
 				DBA3E08726402F1300DEB36A /* JSONCodability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
