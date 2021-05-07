@@ -82,7 +82,7 @@ class DustViewController: UIViewController {
             self.localLabel.text = name
             self.timeLabel.text = dust.dateTime
         }
-        changeBackgroundColor(by: Int(dust.dust)!)
+        changeBackgroundColor(by: dust.dust)
     }
     
     
@@ -99,8 +99,12 @@ class DustViewController: UIViewController {
     
     /// 미세먼지에 따른 `배경화면 색` 변경
     /// - Parameter dust: 미세먼지 정보가 포함된 Dust 타입
-    func changeBackgroundColor(by value: Int ) {
+    func changeBackgroundColor(by value: String ) {
         DispatchQueue.excuteOnMainQueue {
+            guard let value = Int(value) else {
+                self.gradientView.changeGradient(colors: [#colorLiteral(red: 0.22, green: 0.24, blue: 0.27, alpha: 1.00).cgColor,#colorLiteral(red: 0.83, green: 0.25, blue: 0.00, alpha: 1.00).cgColor])
+                return
+            }
             switch value {
             case 0..<31 :
                 self.gradientView.changeGradient(colors: [#colorLiteral(red: 0.24, green: 0.86, blue: 0.94, alpha: 1.00).cgColor, #colorLiteral(red: 0.78, green: 1.00, blue: 0.76, alpha: 1.00).cgColor])
