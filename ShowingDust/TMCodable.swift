@@ -6,7 +6,17 @@
 //
 
 import Foundation
+/*
+ *Root
+    - *Response
+        - *Header
+            - code
+            - message
+        - *Body
+            - [*item]
+ */
 
+/// TM 정보 관련된 JSon
 struct TMRoot: Codable, ResultCode {
     var response: TMResponse
 
@@ -17,10 +27,12 @@ struct TMRoot: Codable, ResultCode {
         return response.body?.items
     }
 }
+
 struct TMResponse: Codable {
     var header: TMHeader
     var body: TMBody?
 }
+
 struct TMHeader: Codable, OpenAPIError {
     var code: String
     var message: String
@@ -29,11 +41,12 @@ struct TMHeader: Codable, OpenAPIError {
         case code = "resultCode"
         case message =  "resultMsg"
     }
-    
 }
+
 struct TMBody: Codable {
     var items: [TM]
 }
+
 struct TM: Codable {
     var tmX: String
     var tmY: String

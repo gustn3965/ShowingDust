@@ -7,6 +7,8 @@
 
 import Foundation
 
+///  현재 시간에서 `시간:00` 만 얻도록 하는 메서드
+
 extension Date {
     static func getCurrentHour() -> Date{
         let formatter = DateFormatter()

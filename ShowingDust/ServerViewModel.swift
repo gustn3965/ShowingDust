@@ -9,14 +9,19 @@ import Foundation
 
 /// `URLType에 맞는 정보`를 서버에서 가져온다.
 final class ServerViewModel<DataType:Codable> where DataType: ResultCode {
-    
+
     let session: Session = URLSession.shared
-    
+
+    // MARK: - Method
+
+    /// URLType에 따른 URLRequest 생성
+    /// - Parameter urlType: 특정 목적에 따른 Type
+    /// - Returns: URLRequest
     private func createReuqest(by urlType: URLType ) -> URLRequest? {
         guard let url = urlType.getURL() else { return nil }
         return URLRequest(url: url)
     }
-
+    
     /// URLType에 맞는 정보 가져온다.
     /// - Parameters:
     ///   - urlType: `특정 목적`에 따른 정보를 나타냄

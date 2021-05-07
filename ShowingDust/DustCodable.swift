@@ -7,6 +7,17 @@
 
 import Foundation
 
+/*
+ *Root
+    - *Response
+        - *Header
+            - code
+            - message
+        - *Body
+            - [*item]
+ */
+
+/// 미세먼지 정보 관련된 JSon 
 struct DustRoot: Codable, ResultCode {
     var response: DustResponse
     var resultCode: OpenAPIError {

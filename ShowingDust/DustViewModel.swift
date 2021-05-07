@@ -17,7 +17,9 @@ final class DustViewModel {
     let tmViewModel = ServerViewModel<TMRoot>()
     let stationViewModel = ServerViewModel<StationRoot>()
     let dustViewModel = ServerViewModel<DustRoot>()
-
+    
+    // MARK: - Method 
+    
     /// 미세먼지 정보만 가져오는 메서드
     /// - Parameters:
     ///   - name: 현재 지역 이름

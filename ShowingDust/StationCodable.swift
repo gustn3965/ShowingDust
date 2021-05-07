@@ -7,13 +7,16 @@
 
 import Foundation
 /*
- StationRoot
-    - StationResponse
-        - ErrorCode
-        - StationItems
-            - Station
- 
+ *Root
+    - *Response
+        - *Header
+            - code
+            - message
+        - *Body
+            - [*item]
  */
+
+/// Station 정보 관련된 JSon 
 struct StationRoot: Codable, ResultCode {
     var response: StationResponse
 
@@ -24,10 +27,12 @@ struct StationRoot: Codable, ResultCode {
         return response.header
     }
 }
+
 struct StationResponse: Codable {
     var header: StationHeader
     var body: StationBody?
 }
+
 struct StationHeader: Codable, OpenAPIError {
     var code: String
     var message: String
