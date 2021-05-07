@@ -18,7 +18,7 @@ class DustViewController: UIViewController {
     
     @IBOutlet weak var hitLabel: UILabel!
     let dustViewModel = DustViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -32,16 +32,9 @@ class DustViewController: UIViewController {
             self.getUserLocation { name in
                 self.dustViewModel.getDust(by: name) { data in
                     do {
-                        let result = try data.get()
-                        print("---")
-                        DispatchQueue.main.async {
-                            self.dustLabel.text = result.dustText
-                            self.totalLabel.text = result.totalText
-                            self.localLabel.text = name
-                            self.timeLabel.text = result.dateTime
-                            self.stopProgressBar()
-                            self.changeBackgroundColorBy(dust: result)
-                        }
+                        let dust = try data.get()
+                        self.updateDisplay(dust: dust, name: name)
+                        self.stopProgressBar()
                     } catch {
                         print(error)
                         self.stopProgressBar()
@@ -51,9 +44,12 @@ class DustViewController: UIViewController {
         }
     }
     
+    /// 캐시 또는 디스크에서 가져왔는지 확인하는 test 메서드
+    /// - 가져올 경우 하단 Label에 표시됨.
     func testHitCacheOrDisk() {
         NotificationCenter.default.addObserver(self, selector: #selector(receiveHit), name: Notification.Name(rawValue: "CacheHit"), object: nil)
     }
+
     @objc func receiveHit(_ notification: Notification) {
         let key = Notification.Name(rawValue: "CacheHit")
         guard let data = notification.userInfo?[key] as? String else { return }
@@ -62,6 +58,15 @@ class DustViewController: UIViewController {
         }
     }
     
+    func updateDisplay(dust: Dust, name: String ) {
+        DispatchQueue.excuteOnMainQueue {
+            self.dustLabel.text = dust.dustText
+            self.totalLabel.text = dust.totalText
+            self.localLabel.text = name
+            self.timeLabel.text = dust.dateTime
+        }
+        changeBackgroundColorBy(dust: dust)
+    }
     
     
     func startProgressBar() {
@@ -74,7 +79,7 @@ class DustViewController: UIViewController {
             self.progressBar.stopAnimating()
         }
     }
-
+    
     /// 미세먼지에 따른 `배경화면 색` 변경
     /// - Parameter dust: 미세먼지 정보가 포함된 Dust 타입
     func changeBackgroundColorBy(dust: Dust) {

@@ -9,6 +9,7 @@ import CoreLocation.CLLocation
 
 /// 특정 목적에 맞는 URL 타입 생성
 enum URLType {
+
     case gettingTMByCity(String)
     case dustInforByStation(staion: String, dateTerm: DateTerm)
     case recentStationByTM(TM)
