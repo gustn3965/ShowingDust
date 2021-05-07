@@ -11,23 +11,35 @@ import Foundation
 final class ServerViewModel<DataType:Codable> where DataType: ResultCode {
 
     var session: Session = URLSession.shared
+<<<<<<< HEAD
+=======
+    
+    var url: URL?
+>>>>>>> main
 
     // MARK: - Method
 
+    /// `URLType`을 지정하여 url을 초기화한다.
+    /// - Parameter urlType: 특정 목적에 맞는 API호출하기 위한 type지정
+    func setURL(by urlType: URLType) {
+        url = urlType.getURL()
+    }
+    
     /// URLType에 따른 URLRequest 생성
-    /// - Parameter urlType: 특정 목적에 따른 Type
     /// - Returns: URLRequest
-    private func createReuqest(by urlType: URLType ) -> URLRequest? {
-        guard let url = urlType.getURL() else { return nil }
+    private func createReuqest() -> URLRequest? {
+        guard let url = url else { return nil }
         return URLRequest(url: url)
     }
     
     /// URLType에 맞는 정보 가져온다.
     /// - Parameters:
-    ///   - urlType: `특정 목적`에 따른 정보를 나타냄
     ///   - completion: 가져온 정보를 `success, failure` 반환
-    func getInformation(by urlType: URLType, completion: @escaping ( (Result<DataType, TaskError>) -> Void )) {
-        guard let request = createReuqest(by: urlType) else { return }
+    func getInformation(completion: @escaping ( (Result<DataType, TaskError>) -> Void )) {
+        guard let request = createReuqest() else {
+            completion(.failure(.urlError))
+            return }
+
         session.getData(request) { result in
             switch result {
             case .success(let data):
