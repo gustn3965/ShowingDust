@@ -34,17 +34,22 @@ final class DustViewModel {
         }
         
         //캐시에 없다면 API호출
-        tmViewModel.getInformation(by: URLType.gettingTMByCity(name)) { resultTM  in
+        tmViewModel.setURL(by: .gettingTMByCity(name))
+        tmViewModel.getInformation { resultTM  in
             switch resultTM {
             case .failure(let err): completion(.failure(err))
             case .success(let tmRoot):
-                self.stationViewModel.getInformation(by: URLType.recentStationByTM(tmRoot.tms![0])) { resultLocation in
+
+                self.stationViewModel.setURL(by: .recentStationByTM(tmRoot.tms![0]))
+                self.stationViewModel.getInformation { resultLocation in
                     switch resultLocation {
                     case .failure(let err): completion(.failure(err))
                     case .success(let locationRoot):
-                        self.dustViewModel.getInformation(
-                            by: .dustInforByStation(staion: locationRoot.stationlist![0].stationName,
-                                                    dateTerm: .day)) { resultDust in
+
+                        self.dustViewModel.setURL(by: .dustInforByStation(
+                                                    staion: locationRoot.stationlist![0].stationName,
+                                                    dateTerm: .day))
+                        self.dustViewModel.getInformation { resultDust in
                             switch resultDust {
                             case .failure(let err): completion(.failure(err))
                             case .success(let dustRoot):

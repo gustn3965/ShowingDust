@@ -7,15 +7,6 @@
 
 import Foundation
 
-enum TaskError: Error {
-    case userFault
-    case serverFault
-    case errorFault
-    case decodingError
-    
-    case apiError(String)
-}
-
 protocol Session {
     func getData(_ request: URLRequest, completion: @escaping (Result<Data, TaskError>) -> Void )
 }
@@ -26,8 +17,8 @@ extension URLSession: Session {
     /// - Parameter request: 목적에 따른 request
     func getData(_ request: URLRequest, completion: @escaping (Result<Data, TaskError>) -> Void ) {
         dataTask(with: request) { data, response, error in
-            guard error == nil  else { completion(.failure(.errorFault)); return }
-            guard let data = data else { completion(.failure(.serverFault)); return }
+            guard error == nil  else { completion(.failure(.dataTaskError)); return }
+            guard let data = data else { completion(.failure(.dataTaskError)); return }
             completion(.success(data))
         }.resume()
     }
