@@ -18,17 +18,16 @@ import Foundation
 
  */
 
-
 /// 캐시 및 디스크에 저장할 객체
 final class CacheValue: Codable {
     var dust: Dust
-    var date: Date
-    init(dust: Dust, date: Date) {
+    init(dust: Dust) {
         self.dust = dust
-        self.date = date
+    }
+    var date: Date {
+        return dust.date
     }
 }
-
 
 /// `캐시` 및 `디스크`에 저장 및 가져오는 객체
 final class Cache {
@@ -40,9 +39,9 @@ final class Cache {
     ///   - dust: 저장할 Dust 객체
     ///   - date: 저장할 날짜 Date
     ///   - key: Key가 되는 지역이름
-    func save(object dust: Dust, date: Date, key: String) {
+    func save(object dust: Dust, key: String) {
         DispatchQueue.global(qos: .background).async {
-            let value = CacheValue(dust: dust, date: date)
+            let value = CacheValue(dust: dust)
             self.saveOnCache(value: value, key: key)
             self.saveOnDisk(value: value, key: key)
         }
@@ -72,7 +71,7 @@ final class Cache {
         } else {
             return nil }
     }
-    
+
     private func checkCacheIfLatest(key: NSString, date: Date ) -> CacheValue?  {
         guard let value = storage.object(forKey: key) else { return nil }
         if value.date == date {
@@ -81,8 +80,7 @@ final class Cache {
             return value }
         return nil
     }
-    
-    
+
     private func checkDiskIfLatest(key: String, date: Date ) -> CacheValue?  {
         guard let data = UserDefaults.standard.data(forKey: key) ,
               let value = try? JSONDecoder().decode(CacheValue.self, from: data) else { return nil }
@@ -92,7 +90,6 @@ final class Cache {
             return value }
         return nil
     }
-    
     
     /// 캐시 또는 디스크에 있는 경우 NotifiaitonCenter 를 통해 ViewController에게 전달한다
     /// - Parameter title: Cache  또는 Disk

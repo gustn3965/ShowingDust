@@ -21,6 +21,7 @@ final class DustViewModel {
     // MARK: - Method 
     
     /// 미세먼지 정보만 가져오는 메서드
+    /// - 캐시에 존재하고 최신이라면 캐시에서 가져오고, 그렇지않다면 API호출하여 캐시에 저장한다.
     /// - Parameters:
     ///   - name: 현재 지역 이름
     ///   - completion: 가져온 데이터가 성공적인지 실패인지 받는 클로저
@@ -51,7 +52,6 @@ final class DustViewModel {
                                 
                                 // 캐시 및 디스크에 저장한다. 
                                 self.cache.save(object: dustRoot.dust!.items[0],
-                                                date: dustRoot.dust!.items[0].date,
                                                 key: name)
                             }
                         }
@@ -59,6 +59,5 @@ final class DustViewModel {
                 }
             }
         }
-        
     }
 }
