@@ -10,46 +10,45 @@ import XCTest
 @testable import ShowingDust
 
 class ShowingDustTests: XCTestCase {
-    
-    
-    func test_캐시가_없다면_nil이여야한다() throws {
-        let cache = Cache()
-        XCTAssertNil(cache.fetchBy(key: "???"))
-    }
-    
-    func test_캐시가_있으면서_최신이라면_nil이_아니여야한다() throws {
-        let cache = Cache()
-        let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd HH:mm"
-        let currentDate = Date.getCurrentHour()
-        let strDate = format.string(from: currentDate)
-        cache.save(object: Dust(dateTime: strDate, dust: "123", total: "123"), key: "TEST")
-        XCTAssertNotNil(cache.fetchBy(key: "TEST")) 
-    }
 
-    func test_캐시가_있으면서_최신이_아니라면_nil이여야한다() throws {
-        let cache = Cache()
-        let strDate = "2020-05-05 01:00"
-        cache.save(object: Dust(dateTime: strDate, dust: "123", total: "123"), key: "TEST2")
-        XCTAssertNil(cache.fetchBy(key: "TEST2"))
+    func test_url이_올바르지않는경우_TaskError_dataTaskError를_반환해야한다() throws {
+        let tmViewModel = ServerViewModel<TMRoot>()
+        tmViewModel.url = URL(string:"http:/")
+        timeout(2) { exp in
+            tmViewModel.getInformation { result in
+                exp.fulfill()
+                switch result {
+                case .failure(let error):
+                    XCTAssert(error == TaskError.dataTaskError, error.localizedDescription)
+                default:
+                    XCTFail()
+                }
+            }
+        }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    func test_URL이_올바르지않는경우_urlError를_반환해야한다() throws {
+    func test_tmAPI_url이_올바르지않은_경우_TaskError_urlError를_반환해야한다() throws {
         let tmViewModel = ServerViewModel<TMRoot>()
-//        tmViewModel.url =
+        
+        var defaultURL = "http://apis.data.go.kr/"
+        let lastURL = "returnType=json&serviceKey=\(KEYEncoding)"
+        defaultURL += "MsrstnInfoInqireSvc/getTMStdrCrdnt?"
+        let encodedName = "군포시".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        defaultURL += "umdName=\(encodedName)&"
+        defaultURL += lastURL
+        
+        tmViewModel.url = URL(string:defaultURL)
+        timeout(2) { exp in
+            tmViewModel.getInformation { result in
+                exp.fulfill()
+                switch result {
+                case .failure(let error):
+                    XCTAssert(error == TaskError.urlError, error.localizedDescription)
+                default:
+                    XCTFail()
+                }
+            }
+        }
     }
     
     func test_tmAPI호출시_정상이면서_서버에서_에러가_발생할경우_apiError를_반환해야한다() throws {
@@ -85,43 +84,63 @@ class ShowingDustTests: XCTestCase {
         let tmViewModel = ServerViewModel<TMRoot>()
         tmViewModel.session = session
         tmViewModel.setURL(by: .gettingTMByCity("군포시"))
-        timeout(1) { exp in
+        timeout(2) { exp in
             tmViewModel.getInformation { result in
                 exp.fulfill()
                 switch result {
                 case .success(let tmroot):
-                   XCTAssertNotNil(tmroot.tms?[0])
+                    XCTAssertNotNil(tmroot.tms?[0])
                 case .failure(let error):
-                    XCTFail()
+                    XCTFail(error.localizedDescription)
                 }
             }
         }
     }
     
     
-    
-    func test_지역이름이_없는경우_서버통신은_실패한다() throws {
-        let dustViewModel = DustViewModel()
-        timeout(2) { exp in
-            dustViewModel.getDust(by: "") { result in
+    func test_stationAPI호출시_url이_올바르다면_Body가있어야한다() {
+        let mockTM = TM(tmX: "200089.126044", tmY: "453946.42329")
+        let stationViewModel = ServerViewModel<StationRoot>()
+        stationViewModel.setURL(by: .recentStationByTM(mockTM))
+        
+        timeout(1) { exp in
+            stationViewModel.getInformation { result in
                 exp.fulfill()
                 switch result {
-                case .failure(let error) :
-                    XCTAssert(true)
-                default:
-                    XCTFail()
+                case .success(let stationRoot):
+                    XCTAssertNotNil(stationRoot.stationlist?[0])
+                case .failure(let error):
+                    XCTFail(error.localizedDescription)
                 }
             }
         }
     }
     
-    func test_지역이름이_있는경우_서버통신은_성공한다_() throws {
+    func test_dustAPI호출시_url이_올바르다면_Body가_있어야한다() {
+        let dustViewModel = ServerViewModel<DustRoot>()
+        dustViewModel.setURL(by: .dustInforByStation(staion: "종로구", dateTerm: .day))
+        
+        timeout(1) { exp in
+            dustViewModel.getInformation { result in
+                exp.fulfill()
+                switch result {
+                case .success(let dustRoot):
+                    XCTAssertNotNil(dustRoot.dust?.items[0])
+                case .failure(let error):
+                    XCTFail(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    
+    func test_모두_올바른경우에_3가지API모두호출하는_DustViewModel서버통신은_성공한다_() throws {
         let dustViewModel = DustViewModel()
         timeout(2) { exp in
             dustViewModel.getDust(by: "군포시") { result in
                 exp.fulfill()
                 switch result {
-                case .success(let dust) :
+                case .success(_) :
                     XCTAssert(true)
                 default:
                     XCTFail()
@@ -134,42 +153,16 @@ class ShowingDustTests: XCTestCase {
 extension XCTestCase {
     func timeout(_ timeout: TimeInterval, completion: (XCTestExpectation) -> Void) {
         let exp = expectation(description: "Timeout: \(timeout) seconds")
-
+        
         completion(exp)
-
+        
         waitForExpectations(timeout: timeout) { error in
             guard let error = error else { return }
             XCTFail("Timeout error: \(error)")
         }
     }
-
-}
-
-func getMockTMRootErrorData() -> TMRoot  {
-    let tmHeader = TMHeader(code: "01", message: "Application Error")
-    let tmResponse = TMResponse(header: tmHeader, body: nil)
-    let tmRoot = TMRoot(response: tmResponse)
-    return tmRoot
-}
-
-func getMockTMRootData() -> TMRoot {
-    let tm = TM(tmX: "234234.0000", tmY: "234234.0000")
-    let tmBody = TMBody(items: [tm])
-    let tmHeader = TMHeader(code: "00", message: "")
-    let tmResponse = TMResponse(header: tmHeader, body: tmBody)
-    let tmRoot = TMRoot(response: tmResponse)
-    return tmRoot
-}
-
-class MockSession: Session {
     
-    var data: Data?
-    
-    func getData(_ request: URLRequest, completion: @escaping (Result<Data, TaskError>) -> Void) {
-        guard let data = data else {
-            completion(.failure(TaskError.dataTaskError))
-            return
-        }
-        completion(.success(data))
-    }
 }
+
+
+

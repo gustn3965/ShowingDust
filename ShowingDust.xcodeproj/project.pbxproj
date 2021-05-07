@@ -16,6 +16,9 @@
 		DB11FDAB264517FD00496D12 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDAA264517FD00496D12 /* GradientView.swift */; };
 		DB11FDCF26455F4400496D12 /* ShowingDustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDCE26455F4400496D12 /* ShowingDustTests.swift */; };
 		DB11FDD726456C7600496D12 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDD626456C7600496D12 /* APIError.swift */; };
+		DB11FDD92645781600496D12 /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDD82645781600496D12 /* CacheTests.swift */; };
+		DB11FDDE26457CA500496D12 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDDD26457CA500496D12 /* MockSession.swift */; };
+		DB11FDE026457CE300496D12 /* MockTMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDDF26457CE300496D12 /* MockTMData.swift */; };
 		DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E038263FED5200DEB36A /* AppDelegate.swift */; };
 		DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */; };
 		DBA3E042263FED5300DEB36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA3E041263FED5300DEB36A /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		DB11FDCE26455F4400496D12 /* ShowingDustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingDustTests.swift; sourceTree = "<group>"; };
 		DB11FDD026455F4400496D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB11FDD626456C7600496D12 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		DB11FDD82645781600496D12 /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
+		DB11FDDD26457CA500496D12 /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
+		DB11FDDF26457CE300496D12 /* MockTMData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTMData.swift; sourceTree = "<group>"; };
 		DBA3E035263FED5200DEB36A /* ShowingDust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowingDust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA3E038263FED5200DEB36A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,10 +127,21 @@
 		DB11FDCD26455F4400496D12 /* ShowingDustTests */ = {
 			isa = PBXGroup;
 			children = (
+				DB11FDDA26457C8200496D12 /* Mock */,
 				DB11FDCE26455F4400496D12 /* ShowingDustTests.swift */,
+				DB11FDD82645781600496D12 /* CacheTests.swift */,
 				DB11FDD026455F4400496D12 /* Info.plist */,
 			);
 			path = ShowingDustTests;
+			sourceTree = "<group>";
+		};
+		DB11FDDA26457C8200496D12 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				DB11FDDD26457CA500496D12 /* MockSession.swift */,
+				DB11FDDF26457CE300496D12 /* MockTMData.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		DBA3E02C263FED5200DEB36A = {
@@ -322,6 +339,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB11FDE026457CE300496D12 /* MockTMData.swift in Sources */,
+				DB11FDDE26457CA500496D12 /* MockSession.swift in Sources */,
+				DB11FDD92645781600496D12 /* CacheTests.swift in Sources */,
 				DB11FDCF26455F4400496D12 /* ShowingDustTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
