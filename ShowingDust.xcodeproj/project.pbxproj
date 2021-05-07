@@ -14,6 +14,7 @@
 		DB114F08264420810071591E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F07264420810071591E /* DateExtension.swift */; };
 		DB11FDA82645118900496D12 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDA72645118900496D12 /* UIView+Extension.swift */; };
 		DB11FDAB264517FD00496D12 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDAA264517FD00496D12 /* GradientView.swift */; };
+		DB11FDCF26455F4400496D12 /* ShowingDustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDCE26455F4400496D12 /* ShowingDustTests.swift */; };
 		DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E038263FED5200DEB36A /* AppDelegate.swift */; };
 		DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */; };
 		DBA3E042263FED5300DEB36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA3E041263FED5300DEB36A /* Assets.xcassets */; };
@@ -31,6 +32,16 @@
 		DBD0C46C2641486300291011 /* TMCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46B2641486300291011 /* TMCodable.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DB11FDD126455F4400496D12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBA3E02D263FED5200DEB36A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBA3E034263FED5200DEB36A;
+			remoteInfo = ShowingDust;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		DB114EFC2643D8A80071591E /* ServerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModel.swift; sourceTree = "<group>"; };
 		DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
@@ -39,6 +50,9 @@
 		DB114F07264420810071591E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		DB11FDA72645118900496D12 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DB11FDAA264517FD00496D12 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		DB11FDCC26455F4400496D12 /* ShowingDustTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowingDustTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB11FDCE26455F4400496D12 /* ShowingDustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingDustTests.swift; sourceTree = "<group>"; };
+		DB11FDD026455F4400496D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBA3E035263FED5200DEB36A /* ShowingDust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowingDust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA3E038263FED5200DEB36A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DB11FDC926455F4400496D12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBA3E032263FED5200DEB36A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,10 +116,20 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		DB11FDCD26455F4400496D12 /* ShowingDustTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB11FDCE26455F4400496D12 /* ShowingDustTests.swift */,
+				DB11FDD026455F4400496D12 /* Info.plist */,
+			);
+			path = ShowingDustTests;
+			sourceTree = "<group>";
+		};
 		DBA3E02C263FED5200DEB36A = {
 			isa = PBXGroup;
 			children = (
 				DBA3E037263FED5200DEB36A /* ShowingDust */,
+				DB11FDCD26455F4400496D12 /* ShowingDustTests */,
 				DBA3E036263FED5200DEB36A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				DBA3E035263FED5200DEB36A /* ShowingDust.app */,
+				DB11FDCC26455F4400496D12 /* ShowingDustTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +222,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DB11FDCB26455F4400496D12 /* ShowingDustTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB11FDD326455F4400496D12 /* Build configuration list for PBXNativeTarget "ShowingDustTests" */;
+			buildPhases = (
+				DB11FDC826455F4400496D12 /* Sources */,
+				DB11FDC926455F4400496D12 /* Frameworks */,
+				DB11FDCA26455F4400496D12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB11FDD226455F4400496D12 /* PBXTargetDependency */,
+			);
+			name = ShowingDustTests;
+			productName = ShowingDustTests;
+			productReference = DB11FDCC26455F4400496D12 /* ShowingDustTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DBA3E034263FED5200DEB36A /* ShowingDust */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBA3E049263FED5300DEB36A /* Build configuration list for PBXNativeTarget "ShowingDust" */;
@@ -216,6 +266,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					DB11FDCB26455F4400496D12 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = DBA3E034263FED5200DEB36A;
+					};
 					DBA3E034263FED5200DEB36A = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -235,11 +289,19 @@
 			projectRoot = "";
 			targets = (
 				DBA3E034263FED5200DEB36A /* ShowingDust */,
+				DB11FDCB26455F4400496D12 /* ShowingDustTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DB11FDCA26455F4400496D12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBA3E033263FED5200DEB36A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,6 +315,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DB11FDC826455F4400496D12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB11FDCF26455F4400496D12 /* ShowingDustTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBA3E031263FED5200DEB36A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,6 +351,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DB11FDD226455F4400496D12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBA3E034263FED5200DEB36A /* ShowingDust */;
+			targetProxy = DB11FDD126455F4400496D12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		DBA3E043263FED5300DEB36A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -293,6 +371,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DB11FDD426455F4400496D12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WVLV77R6X7;
+				INFOPLIST_FILE = ShowingDustTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyunsu.park.ShowingDustTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShowingDust.app/ShowingDust";
+			};
+			name = Debug;
+		};
+		DB11FDD526455F4500496D12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WVLV77R6X7;
+				INFOPLIST_FILE = ShowingDustTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyunsu.park.ShowingDustTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShowingDust.app/ShowingDust";
+			};
+			name = Release;
+		};
 		DBA3E047263FED5300DEB36A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -452,6 +570,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DB11FDD326455F4400496D12 /* Build configuration list for PBXNativeTarget "ShowingDustTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB11FDD426455F4400496D12 /* Debug */,
+				DB11FDD526455F4500496D12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DBA3E030263FED5200DEB36A /* Build configuration list for PBXProject "ShowingDust" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
