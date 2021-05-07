@@ -24,24 +24,12 @@
 		DBA3E05C2640198200DEB36A /* StationCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E05B2640198200DEB36A /* StationCodable.swift */; };
 		DBA3E06026401B8F00DEB36A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E05F26401B8F00DEB36A /* Session.swift */; };
 		DBA3E06526401E5A00DEB36A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E06426401E5A00DEB36A /* Key.swift */; };
-		DBA3E07D2640243E00DEB36A /* ShowingDustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E07C2640243E00DEB36A /* ShowingDustTests.swift */; };
-		DBA3E0852640270200DEB36A /* StationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E0842640270200DEB36A /* StationTest.swift */; };
 		DBA3E08726402F1300DEB36A /* JSONCodability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E08626402F1300DEB36A /* JSONCodability.swift */; };
 		DBA3E0892640392000DEB36A /* DustViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E0882640392000DEB36A /* DustViewModel.swift */; };
 		DBA3E08B2640395A00DEB36A /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E08A2640395A00DEB36A /* URLType.swift */; };
 		DBD0C46A26413B5000291011 /* DustCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46926413B5000291011 /* DustCodable.swift */; };
 		DBD0C46C2641486300291011 /* TMCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46B2641486300291011 /* TMCodable.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DBA3E07F2640243E00DEB36A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DBA3E02D263FED5200DEB36A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DBA3E034263FED5200DEB36A;
-			remoteInfo = ShowingDust;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DB114EFC2643D8A80071591E /* ServerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModel.swift; sourceTree = "<group>"; };
@@ -63,10 +51,6 @@
 		DBA3E05B2640198200DEB36A /* StationCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCodable.swift; sourceTree = "<group>"; };
 		DBA3E05F26401B8F00DEB36A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		DBA3E06426401E5A00DEB36A /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
-		DBA3E07A2640243E00DEB36A /* ShowingDustTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowingDustTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBA3E07C2640243E00DEB36A /* ShowingDustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingDustTests.swift; sourceTree = "<group>"; };
-		DBA3E07E2640243E00DEB36A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DBA3E0842640270200DEB36A /* StationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTest.swift; sourceTree = "<group>"; };
 		DBA3E08626402F1300DEB36A /* JSONCodability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCodability.swift; sourceTree = "<group>"; };
 		DBA3E0882640392000DEB36A /* DustViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustViewModel.swift; sourceTree = "<group>"; };
 		DBA3E08A2640395A00DEB36A /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
@@ -76,13 +60,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		DBA3E032263FED5200DEB36A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBA3E0772640243E00DEB36A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				DBA3E037263FED5200DEB36A /* ShowingDust */,
-				DBA3E07B2640243E00DEB36A /* ShowingDustTests */,
 				DBA3E036263FED5200DEB36A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				DBA3E035263FED5200DEB36A /* ShowingDust.app */,
-				DBA3E07A2640243E00DEB36A /* ShowingDustTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,16 +187,6 @@
 			name = KEY;
 			sourceTree = "<group>";
 		};
-		DBA3E07B2640243E00DEB36A /* ShowingDustTests */ = {
-			isa = PBXGroup;
-			children = (
-				DBA3E0842640270200DEB36A /* StationTest.swift */,
-				DBA3E07C2640243E00DEB36A /* ShowingDustTests.swift */,
-				DBA3E07E2640243E00DEB36A /* Info.plist */,
-			);
-			path = ShowingDustTests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,24 +207,6 @@
 			productReference = DBA3E035263FED5200DEB36A /* ShowingDust.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DBA3E0792640243E00DEB36A /* ShowingDustTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DBA3E0832640243E00DEB36A /* Build configuration list for PBXNativeTarget "ShowingDustTests" */;
-			buildPhases = (
-				DBA3E0762640243E00DEB36A /* Sources */,
-				DBA3E0772640243E00DEB36A /* Frameworks */,
-				DBA3E0782640243E00DEB36A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DBA3E0802640243E00DEB36A /* PBXTargetDependency */,
-			);
-			name = ShowingDustTests;
-			productName = ShowingDustTests;
-			productReference = DBA3E07A2640243E00DEB36A /* ShowingDustTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -271,10 +218,6 @@
 				TargetAttributes = {
 					DBA3E034263FED5200DEB36A = {
 						CreatedOnToolsVersion = 12.5;
-					};
-					DBA3E0792640243E00DEB36A = {
-						CreatedOnToolsVersion = 12.5;
-						TestTargetID = DBA3E034263FED5200DEB36A;
 					};
 				};
 			};
@@ -292,7 +235,6 @@
 			projectRoot = "";
 			targets = (
 				DBA3E034263FED5200DEB36A /* ShowingDust */,
-				DBA3E0792640243E00DEB36A /* ShowingDustTests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,13 +247,6 @@
 				DBA3E04F263FEF9300DEB36A /* Dust.storyboard in Resources */,
 				DBA3E045263FED5300DEB36A /* LaunchScreen.storyboard in Resources */,
 				DBA3E042263FED5300DEB36A /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBA3E0782640243E00DEB36A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,24 +279,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBA3E0762640243E00DEB36A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DBA3E0852640270200DEB36A /* StationTest.swift in Sources */,
-				DBA3E07D2640243E00DEB36A /* ShowingDustTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DBA3E0802640243E00DEB36A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DBA3E034263FED5200DEB36A /* ShowingDust */;
-			targetProxy = DBA3E07F2640243E00DEB36A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DBA3E043263FED5300DEB36A /* LaunchScreen.storyboard */ = {
@@ -531,46 +449,6 @@
 			};
 			name = Release;
 		};
-		DBA3E0812640243E00DEB36A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WVLV77R6X7;
-				INFOPLIST_FILE = ShowingDustTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyunsu.park.ShowingDustTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShowingDust.app/ShowingDust";
-			};
-			name = Debug;
-		};
-		DBA3E0822640243E00DEB36A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WVLV77R6X7;
-				INFOPLIST_FILE = ShowingDustTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyunsu.park.ShowingDustTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShowingDust.app/ShowingDust";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -588,15 +466,6 @@
 			buildConfigurations = (
 				DBA3E04A263FED5300DEB36A /* Debug */,
 				DBA3E04B263FED5300DEB36A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DBA3E0832640243E00DEB36A /* Build configuration list for PBXNativeTarget "ShowingDustTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DBA3E0812640243E00DEB36A /* Debug */,
-				DBA3E0822640243E00DEB36A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
