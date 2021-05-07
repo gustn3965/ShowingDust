@@ -17,18 +17,18 @@ class StationTest: XCTestCase {
     
     func test_올바른_reuqest는_성공한다() throws {
         let mockCoordinate = CLLocationCoordinate2D(latitude: 37.554466, longitude: 126.858037)
-        let viewModel = DustViewModel<StationCode>()
-        timeout(1) { exp in
-            viewModel.getInformation(by: .recentStationList(mockCoordinate)) { result in
-                exp.fulfill()
-                do {
-                    try result.get()
-                    XCTAssertTrue(true)
-                } catch {
-                    XCTFail("없음")
-                }
-            }
-        }
+//        let viewModel = DustViewModel<StationCode>()
+//        timeout(1) { exp in
+//            viewModel.getInformation(by: .recentStationList(mockCoordinate)) { result in
+//                exp.fulfill()
+//                do {
+//                    try result.get()
+//                    XCTAssertTrue(true)
+//                } catch {
+//                    XCTFail("없음")
+//                }
+//            }
+//        }
         
     }
 

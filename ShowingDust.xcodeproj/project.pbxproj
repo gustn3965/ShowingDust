@@ -12,6 +12,8 @@
 		DB114F032643EC740071591E /* CommonCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F022643EC740071591E /* CommonCodable.swift */; };
 		DB114F0626441BAC0071591E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F0526441BAC0071591E /* Cache.swift */; };
 		DB114F08264420810071591E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F07264420810071591E /* DateExtension.swift */; };
+		DB11FDA82645118900496D12 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDA72645118900496D12 /* UIView+Extension.swift */; };
+		DB11FDAB264517FD00496D12 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDAA264517FD00496D12 /* GradientView.swift */; };
 		DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E038263FED5200DEB36A /* AppDelegate.swift */; };
 		DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */; };
 		DBA3E042263FED5300DEB36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA3E041263FED5300DEB36A /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		DB114F022643EC740071591E /* CommonCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCodable.swift; sourceTree = "<group>"; };
 		DB114F0526441BAC0071591E /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		DB114F07264420810071591E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		DB11FDA72645118900496D12 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		DB11FDAA264517FD00496D12 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		DBA3E035263FED5200DEB36A /* ShowingDust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowingDust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA3E038263FED5200DEB36A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			children = (
 				DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */,
 				DB114F07264420810071591E /* DateExtension.swift */,
+				DB11FDA72645118900496D12 /* UIView+Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -103,6 +108,14 @@
 				DBA3E041263FED5300DEB36A /* Assets.xcassets */,
 			);
 			name = Asset;
+			sourceTree = "<group>";
+		};
+		DB11FDA9264517F600496D12 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB11FDAA264517FD00496D12 /* GradientView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		DBA3E02C263FED5200DEB36A = {
@@ -128,11 +141,12 @@
 			children = (
 				DBA3E06326401E5200DEB36A /* KEY */,
 				DB114F042643EC920071591E /* Asset */,
+				DBA3E05D2640199400DEB36A /* Codable */,
+				DB11FDA9264517F600496D12 /* View */,
 				DB114F012643E8660071591E /* Extension */,
 				DBA3E05E26401B8500DEB36A /* ViewModel */,
-				DBA3E05D2640199400DEB36A /* Codable */,
-				DBA3E0582640190A00DEB36A /* Storyboard */,
 				DBA3E057264018FE00DEB36A /* ViewController */,
+				DBA3E0582640190A00DEB36A /* Storyboard */,
 				DBA3E0592640191C00DEB36A /* AppDelegate */,
 				DBA3E046263FED5300DEB36A /* Info.plist */,
 			);
@@ -308,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB11FDAB264517FD00496D12 /* GradientView.swift in Sources */,
 				DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */,
 				DB114F08264420810071591E /* DateExtension.swift in Sources */,
 				DBA3E04D263FEF8400DEB36A /* DustViewController.swift in Sources */,
@@ -319,6 +334,7 @@
 				DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */,
 				DBA3E08B2640395A00DEB36A /* URLType.swift in Sources */,
 				DB114F032643EC740071591E /* CommonCodable.swift in Sources */,
+				DB11FDA82645118900496D12 /* UIView+Extension.swift in Sources */,
 				DB114F0626441BAC0071591E /* Cache.swift in Sources */,
 				DBA3E06526401E5A00DEB36A /* Key.swift in Sources */,
 				DBA3E056263FF8D500DEB36A /* DustViewController+LocationRequest.swift in Sources */,

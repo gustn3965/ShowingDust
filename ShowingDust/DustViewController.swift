@@ -11,19 +11,24 @@ import CoreLocation
 class DustViewController: UIViewController {
 
     @IBOutlet weak var progressBar: UIActivityIndicatorView!
+    @IBOutlet weak var dustButton: UIButton!
     @IBOutlet weak var dustLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var localLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var hitLabel: UILabel!
+    @IBOutlet weak var gradientView: GradientView!
     
     let locationManager = CLLocationManager()
     let dustViewModel = DustViewModel()
     
+    
     // MARK: - Method
     override func viewDidLoad() {
         super.viewDidLoad()
+        gradientView.changeGradient(colors: [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)])
         locationManager.delegate = self
+        dustButton.setRoundCorner()
         testHitCacheOrDisk()
     }
 
@@ -40,11 +45,11 @@ class DustViewController: UIViewController {
             self.getUserLocation { name in
                 guard let name = name else { return }
                 self.dustViewModel.getDust(by: name) { data in
-                    do {
-                        let dust = try data.get()
+                    switch data {
+                    case .success(let dust):
                         self.updateDisplay(dust: dust, name: name)
                         self.stopProgressBar()
-                    } catch {
+                    case .failure(let error):
                         print(error)
                         self.stopProgressBar()
                     }
@@ -77,7 +82,7 @@ class DustViewController: UIViewController {
             self.localLabel.text = name
             self.timeLabel.text = dust.dateTime
         }
-        changeBackgroundColor(by: dust)
+        changeBackgroundColor(by: Int(dust.dust)!)
     }
     
     
@@ -94,18 +99,17 @@ class DustViewController: UIViewController {
     
     /// 미세먼지에 따른 `배경화면 색` 변경
     /// - Parameter dust: 미세먼지 정보가 포함된 Dust 타입
-    func changeBackgroundColor(by dust: Dust) {
-        let value = Int(dust.dust)!
+    func changeBackgroundColor(by value: Int ) {
         DispatchQueue.excuteOnMainQueue {
             switch value {
             case 0..<31 :
-                self.view.backgroundColor = #colorLiteral(red: 0.75, green: 0.86, blue: 0.98, alpha: 1.00)
+                self.gradientView.changeGradient(colors: [#colorLiteral(red: 0.24, green: 0.86, blue: 0.94, alpha: 1.00).cgColor, #colorLiteral(red: 0.78, green: 1.00, blue: 0.76, alpha: 1.00).cgColor])
             case 31..<71:
-                self.view.backgroundColor = .orange
+                self.gradientView.changeGradient(colors: [#colorLiteral(red: 0.24, green: 0.86, blue: 0.94, alpha: 1.00).cgColor, UIColor.orange.cgColor])
             case 71..<101:
-                self.view.backgroundColor = #colorLiteral(red: 0.83, green: 0.25, blue: 0.00, alpha: 1.00)
+                self.gradientView.changeGradient(colors: [#colorLiteral(red: 0.87, green: 0.54, blue: 0.44, alpha: 1.00).cgColor,#colorLiteral(red: 0.83, green: 0.25, blue: 0.00, alpha: 1.00).cgColor])
             default:
-                self.view.backgroundColor = #colorLiteral(red: 0.22, green: 0.24, blue: 0.27, alpha: 1.00)
+                self.gradientView.changeGradient(colors: [#colorLiteral(red: 0.22, green: 0.24, blue: 0.27, alpha: 1.00).cgColor,#colorLiteral(red: 0.83, green: 0.25, blue: 0.00, alpha: 1.00).cgColor])
             }
         }
     }

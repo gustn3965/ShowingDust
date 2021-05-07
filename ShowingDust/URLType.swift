@@ -38,7 +38,7 @@ enum URLType {
             defaultURL += "MsrstnInfoInqireSvc/getNearbyMsrstnList?"
             defaultURL += "tmX=\(tm.tmX)&tmY=\(tm.tmY)&"
         
-        case .dustInforByStation(let stationName, let dateTerm): print()
+        case .dustInforByStation(let stationName, let dateTerm):
             defaultURL += "ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?"
             defaultURL += "numOfRows=1&"
             let encodedName = stationName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
@@ -46,8 +46,6 @@ enum URLType {
 
         }
         defaultURL += lastURL
-        print(defaultURL)
-        
         return URL(string: defaultURL)
     }
 }
