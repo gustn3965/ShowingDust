@@ -76,11 +76,27 @@ class ShowingDustTests: XCTestCase {
     
     
     
-    func test_tmAPI호출시_서버에러가_날경우_에러를_반환해야한다() throws {
+    func test_tmAPI호출시_서버에서_에러가_발생할경우_에러를_반환해야한다() throws {
         let tmRoot = getMockTMRootData()
-    
+        let tmData = try! jsonEncoder(value: tmRoot)
         let session = MockSession()
+        session.data = tmData
         
+        let tmViewModel = ServerViewModel<TMRoot>()
+        tmViewModel.session = session
+        
+        timeout(1) { exp in
+            tmViewModel.getInformation(by: .gettingTMByCity("군포시")) { result in
+                exp.fulfill()
+                switch result {
+                case .failure(let error):
+                    print(error)
+                    XCTAssertTrue(true)
+                default:
+                    XCTFail()
+                }
+            }
+        }
     }
 
 }

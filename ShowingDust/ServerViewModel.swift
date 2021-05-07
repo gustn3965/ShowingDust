@@ -10,7 +10,7 @@ import Foundation
 /// `URLType에 맞는 정보`를 서버에서 가져온다.
 final class ServerViewModel<DataType:Codable> where DataType: ResultCode {
 
-    let session: Session = URLSession.shared
+    var session: Session = URLSession.shared
 
     // MARK: - Method
 
