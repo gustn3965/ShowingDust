@@ -11,11 +11,8 @@ import Foundation
 final class ServerViewModel<DataType:Codable> where DataType: ResultCode {
 
     var session: Session = URLSession.shared
-<<<<<<< HEAD
-=======
-    
+
     var url: URL?
->>>>>>> main
 
     // MARK: - Method
 

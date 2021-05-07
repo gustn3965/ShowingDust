@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TaskError: Error {
+enum TaskError: Error, Equatable {
     case urlError
     case dataTaskError
     case decodingError
