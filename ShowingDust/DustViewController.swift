@@ -43,7 +43,10 @@ class DustViewController: UIViewController {
         DispatchQueue.global().async {
             self.startProgressBar()
             self.getUserLocation { name in
-                guard let name = name else { return }
+                guard let name = name else {
+                    self.stopProgressBar()
+                    return }
+
                 self.dustViewModel.getDust(by: name) { data in
                     switch data {
                     case .success(let dust):

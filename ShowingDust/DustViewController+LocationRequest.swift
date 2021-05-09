@@ -20,7 +20,9 @@ extension DustViewController: CLLocationManagerDelegate {
             convertLocationToGeocode(loc: loc) { str in
                 completion(str)
             }
-        } 
+        } else {
+            self.stopProgressBar()
+        }
     }
     
     
@@ -61,6 +63,7 @@ extension DustViewController: CLLocationManagerDelegate {
             locationManager.requestAlwaysAuthorization()
             fetchDust()
         default:
+            stopProgressBar()
             return
         }
     }
