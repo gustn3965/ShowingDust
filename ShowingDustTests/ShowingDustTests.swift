@@ -38,7 +38,7 @@ class ShowingDustTests: XCTestCase {
         defaultURL += lastURL
         
         tmViewModel.url = URL(string:defaultURL)
-        timeout(2) { exp in
+        timeout(3) { exp in
             tmViewModel.getInformation { result in
                 exp.fulfill()
                 switch result {
@@ -60,7 +60,7 @@ class ShowingDustTests: XCTestCase {
         let tmViewModel = ServerViewModel<TMRoot>()
         tmViewModel.session = session
         tmViewModel.setURL(by: .gettingTMByCity("군포시"))
-        timeout(1) { exp in
+        timeout(2) { exp in
             tmViewModel.getInformation() { result in
                 exp.fulfill()
                 switch result {
@@ -120,7 +120,7 @@ class ShowingDustTests: XCTestCase {
         let dustViewModel = ServerViewModel<DustRoot>()
         dustViewModel.setURL(by: .dustInforByStation(staion: "종로구", dateTerm: .day))
         
-        timeout(1) { exp in
+        timeout(2) { exp in
             dustViewModel.getInformation { result in
                 exp.fulfill()
                 switch result {

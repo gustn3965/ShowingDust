@@ -12,10 +12,10 @@ import Foundation
 extension Date {
     static func getCurrentHour() -> Date{
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH"
+        formatter.dateFormat = "yyyy-MM-dd kk"
         formatter.locale = Locale(identifier: "ko_KR")
-        let hourDate = formatter.string(from: Date())+":00"
-        formatter.dateFormat = "yyyy-MM-dd HH:00"
+        let hourDate = formatter.string(from: Date())
+        formatter.dateFormat = "yyyy-MM-dd kk"
         return formatter.date(from: hourDate)!
     }
 }

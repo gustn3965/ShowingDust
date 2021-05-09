@@ -24,7 +24,7 @@ final class CacheValue: Codable {
     init(dust: Dust) {
         self.dust = dust
     }
-    var date: Date {
+    var date: Date? {
         return dust.date
     }
 }
@@ -39,11 +39,15 @@ final class Cache {
     ///   - dust: 저장할 Dust 객체
     ///   - date: 저장할 날짜 Date
     ///   - key: Key가 되는 지역이름
-    func save(object dust: Dust, key: String) {
+    func save(object dust: Dust, key: String, completion: (() -> Void)? ) {
         DispatchQueue.global(qos: .background).async {
             let value = CacheValue(dust: dust)
             self.saveOnCache(value: value, key: key)
             self.saveOnDisk(value: value, key: key)
+            completion?()
+            // TODO: Test 지우기
+            self.testHit(title: "API Hit! 🥲")
+            
         }
     }
     

@@ -57,7 +57,7 @@ final class DustViewModel {
                                 
                                 // 캐시 및 디스크에 저장한다. 
                                 self.cache.save(object: dustRoot.dust!.items[0],
-                                                key: name)
+                                                key: name, completion: nil)
                             }
                         }
                     }

@@ -16,17 +16,19 @@ class CacheTests: XCTestCase {
     func test_캐시가_있으면서_최신이라면_nil이_아니여야한다() throws {
         let cache = Cache()
         let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd HH:mm"
+        format.dateFormat = "yyyy-MM-dd kk:mm"
         let currentDate = Date.getCurrentHour()
         let strDate = format.string(from: currentDate)
-        cache.save(object: Dust(dateTime: strDate, dust: "123", total: "123"), key: "TEST")
-        XCTAssertNotNil(cache.fetchBy(key: "TEST"))
+        cache.save(object: Dust(dateTime: strDate, dust: "123", total: "123"), key: "TEST2") {
+            XCTAssertNotNil(cache.fetchBy(key: "TEST2"))
+        }
     }
     
     func test_캐시가_있으면서_최신이_아니라면_nil이여야한다() throws {
         let cache = Cache()
         let strDate = "2020-05-05 01:00"
-        cache.save(object: Dust(dateTime: strDate, dust: "123", total: "123"), key: "TEST2")
-        XCTAssertNil(cache.fetchBy(key: "TEST2"))
+        cache.save(object: Dust(dateTime: strDate, dust: "123", total: "123"), key: "TEST2") {
+            XCTAssertNil(cache.fetchBy(key: "TEST2"))
+        }
     }
 }

@@ -55,14 +55,21 @@ struct Dust: Codable {
         case dateTime = "dataTime"
     }
     
-    var format: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
-        return formatter
-    }()
     var dustText: String { return "미세먼지: \(dust)"}
     var totalText: String { return "통합대기지수: \(total)"}
-    var date: Date {
-        return format.date(from: dateTime)!
+
+    
+    var format: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd kk:mm"
+        return formatter
+    }()
+
+    var date: Date? {
+        // TODO: - 24:00 문제
+        guard let date = format.date(from: dateTime) else {
+            return nil
+        }
+        return date
     }
 }
