@@ -19,7 +19,10 @@
 
 # Stack 
 - In MVVM, I splited responsibilties among using API and converting Data. 
-- In order to get low frequency of calling API, I applied **cache**. 
+- In order to get low frequency of calling API, I applied **cache**.
+
+# Graph 
+![dustGraph](source/dustGraph.png)
 
 # origin of source
 -  "환경부/한국환경공부"
