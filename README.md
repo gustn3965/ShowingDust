@@ -4,6 +4,9 @@
 
 ![dust_gif](source/dustgif.gif)
 
+## Dust Level 1 ~ 4 
+![15](source/15.png) ![40](source/40.png) ![80](source/80.png) ![110](source/110.png)
+
 # Usage 
 - There is **no Key** to use API in this project. 
 - If you want to use this project, **you should sign up below cite in order to apply API**.
