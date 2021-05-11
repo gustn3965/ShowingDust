@@ -29,13 +29,11 @@ class ShowingDustTests: XCTestCase {
     
     func test_tmAPI_url이_올바르지않은_경우_TaskError_urlError를_반환해야한다() throws {
         let tmViewModel = ServerViewModel<TMRoot>()
-        
         var defaultURL = "http://apis.data.go.kr/"
-        let lastURL = "returnType=json&serviceKey=\(KEYEncoding)"
         defaultURL += "MsrstnInfoInqireSvc/getTMStdrCrdnt?"
         let encodedName = "군포시".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         defaultURL += "umdName=\(encodedName)&"
-        defaultURL += lastURL
+        defaultURL += "returnType=json&serviceKey=\(KEYEncoding)"
         
         tmViewModel.url = URL(string:defaultURL)
         timeout(3) { exp in

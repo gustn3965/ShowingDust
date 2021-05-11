@@ -27,8 +27,8 @@ class CacheTests: XCTestCase {
     func test_캐시가_있으면서_최신이_아니라면_nil이여야한다() throws {
         let cache = Cache()
         let strDate = "2020-05-05 01:00"
-        cache.save(object: Dust(dateTime: strDate, dust: "123", total: "123"), key: "TEST2") {
-            XCTAssertNil(cache.fetchBy(key: "TEST2"))
+        cache.save(object: Dust(dateTime: strDate, dust: "123", total: "123"), key: "TEST3") {
+            XCTAssertNil(cache.fetchBy(key: "TEST3"))
         }
     }
 }

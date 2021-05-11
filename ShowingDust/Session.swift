@@ -18,6 +18,12 @@ extension URLSession: Session {
     func getData(_ request: URLRequest, completion: @escaping (Result<Data, TaskError>) -> Void ) {
         dataTask(with: request) { data, response, error in
             guard error == nil  else { completion(.failure(.dataTaskError)); return }
+            let respo = response as? HTTPURLResponse
+            if (500..<600).contains(respo!.statusCode) {
+                completion(.failure(.urlError))
+                return 
+            }
+            
             guard let data = data else { completion(.failure(.dataTaskError)); return }
             completion(.success(data))
         }.resume()
