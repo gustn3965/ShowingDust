@@ -7,6 +7,13 @@
 
 import Foundation
 
+protocol Cache {
+
+    func save(object dust: Dust, key: String, completion: (() -> Void)? )
+    
+    func fetchBy(key: String) -> Dust?
+}
+
 /**
  캐싱
  1. 캐시에 데이터가없다면,
@@ -30,8 +37,8 @@ final class CacheValue: Codable {
 }
 
 /// `캐시` 및 `디스크`에 저장 및 가져오는 객체
-final class Cache {
-    
+final class DefaultCache: Cache {
+    typealias CacheObject = Dust
     private var storage = NSCache<NSString, CacheValue>()
     
     /// `Dust` 및 `Date`를 지역이름의 Key로 `캐시`및 `디스크`에 저장한다.

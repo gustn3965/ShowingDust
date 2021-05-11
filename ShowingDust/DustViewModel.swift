@@ -12,7 +12,7 @@ import Foundation
 final class DustViewModel {
     
     let session: Session = URLSession.shared
-    let cache = Cache()
+    var cache: Cache = DefaultCache()
     
     let tmViewModel = ServerViewModel<TMRoot>()
     let stationViewModel = ServerViewModel<StationRoot>()
@@ -25,11 +25,11 @@ final class DustViewModel {
     /// - Parameters:
     ///   - name: 현재 지역 이름
     ///   - completion: 가져온 데이터가 성공적인지 실패인지 받는 클로저
-    func getDust(by name: String, completion: @escaping ( (Result<Dust, TaskError>) -> Void )) {
+    func getDust(by name: String, term: URLType.DateTerm = .day, completion: @escaping ( (Result<[Dust], TaskError>) -> Void )) {
         
         // 캐시에 있는지 우선 확인.
         if let cached = cache.fetchBy(key: name ) {
-            completion(.success(cached))
+            completion(.success([cached]))
             return
         }
         
@@ -37,7 +37,8 @@ final class DustViewModel {
         tmViewModel.setURL(by: .gettingTMByCity(name))
         tmViewModel.getInformation { resultTM  in
             switch resultTM {
-            case .failure(let err): completion(.failure(err))
+            case .failure(let err):
+                completion(.failure(err))
             case .success(let tmRoot):
 
                 self.stationViewModel.setURL(by: .recentStationByTM(tmRoot.tms![0]))
@@ -48,12 +49,12 @@ final class DustViewModel {
 
                         self.dustViewModel.setURL(by: .dustInforByStation(
                                                     staion: locationRoot.stationlist![0].stationName,
-                                                    dateTerm: .day))
+                                                    dateTerm: term))
                         self.dustViewModel.getInformation { resultDust in
                             switch resultDust {
                             case .failure(let err): completion(.failure(err))
                             case .success(let dustRoot):
-                                completion(.success(dustRoot.dust!.items[0]))
+                                completion(.success(dustRoot.dust!.items))
                                 
                                 // 캐시 및 디스크에 저장한다. 
                                 self.cache.save(object: dustRoot.dust!.items[0],

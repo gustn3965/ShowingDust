@@ -50,7 +50,7 @@ class DustViewController: UIViewController {
                 self.dustViewModel.getDust(by: name) { data in
                     switch data {
                     case .success(let dust):
-                        self.updateDisplay(dust: dust, name: name)
+                        self.updateDisplay(dust: dust[0], name: name)
                         self.stopProgressBar()
                     case .failure(let error):
                         print(error)

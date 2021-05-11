@@ -123,6 +123,7 @@ class ShowingDustTests: XCTestCase {
                 exp.fulfill()
                 switch result {
                 case .success(let dustRoot):
+                    print(dustRoot)
                     XCTAssertNotNil(dustRoot.dust?.items[0])
                 case .failure(let error):
                     XCTFail(error.localizedDescription)
@@ -142,6 +143,25 @@ class ShowingDustTests: XCTestCase {
                     XCTAssert(true)
                 default:
                     XCTFail()
+                }
+            }
+        }
+    }
+    
+    func test_dustAPI_1달기간으로_설정하면_1달기간데이터를_가져온다() {
+        let dustViewModel = DustViewModel()
+        let mockCache = MockCache()
+        dustViewModel.cache = mockCache
+        timeout(5) { exp in
+        
+            dustViewModel.getDust(by: "산본동", term: .month) { result in
+                exp.fulfill()
+                switch result {
+                case .success(let dust):
+                    print(dust)
+                    XCTAssert(dust.count > 1)
+                case .failure(let error):
+                    XCTFail(error.localizedDescription)
                 }
             }
         }

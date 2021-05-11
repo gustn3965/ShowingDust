@@ -10,7 +10,7 @@
 		DB114EFD2643D8A80071591E /* ServerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114EFC2643D8A80071591E /* ServerViewModel.swift */; };
 		DB114F002643E7FC0071591E /* DispatchQueueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */; };
 		DB114F032643EC740071591E /* CommonCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F022643EC740071591E /* CommonCodable.swift */; };
-		DB114F0626441BAC0071591E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F0526441BAC0071591E /* Cache.swift */; };
+		DB114F0626441BAC0071591E /* DefaultCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F0526441BAC0071591E /* DefaultCache.swift */; };
 		DB114F08264420810071591E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F07264420810071591E /* DateExtension.swift */; };
 		DB11FDA82645118900496D12 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDA72645118900496D12 /* UIView+Extension.swift */; };
 		DB11FDAB264517FD00496D12 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDAA264517FD00496D12 /* GradientView.swift */; };
@@ -19,6 +19,7 @@
 		DB11FDD92645781600496D12 /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDD82645781600496D12 /* CacheTests.swift */; };
 		DB11FDDE26457CA500496D12 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDDD26457CA500496D12 /* MockSession.swift */; };
 		DB11FDE026457CE300496D12 /* MockTMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDDF26457CE300496D12 /* MockTMData.swift */; };
+		DB26A5B0264AA23800CDABAB /* MockCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB26A5AF264AA23800CDABAB /* MockCache.swift */; };
 		DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E038263FED5200DEB36A /* AppDelegate.swift */; };
 		DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */; };
 		DBA3E042263FED5300DEB36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA3E041263FED5300DEB36A /* Assets.xcassets */; };
@@ -50,7 +51,7 @@
 		DB114EFC2643D8A80071591E /* ServerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModel.swift; sourceTree = "<group>"; };
 		DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
 		DB114F022643EC740071591E /* CommonCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCodable.swift; sourceTree = "<group>"; };
-		DB114F0526441BAC0071591E /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		DB114F0526441BAC0071591E /* DefaultCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCache.swift; sourceTree = "<group>"; };
 		DB114F07264420810071591E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		DB11FDA72645118900496D12 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DB11FDAA264517FD00496D12 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		DB11FDD82645781600496D12 /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
 		DB11FDDD26457CA500496D12 /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
 		DB11FDDF26457CE300496D12 /* MockTMData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTMData.swift; sourceTree = "<group>"; };
+		DB26A5AF264AA23800CDABAB /* MockCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCache.swift; sourceTree = "<group>"; };
 		DBA3E035263FED5200DEB36A /* ShowingDust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowingDust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA3E038263FED5200DEB36A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				DB11FDDD26457CA500496D12 /* MockSession.swift */,
 				DB11FDDF26457CE300496D12 /* MockTMData.swift */,
+				DB26A5AF264AA23800CDABAB /* MockCache.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -226,7 +229,7 @@
 				DBA3E05F26401B8F00DEB36A /* Session.swift */,
 				DB114EFC2643D8A80071591E /* ServerViewModel.swift */,
 				DBA3E0882640392000DEB36A /* DustViewModel.swift */,
-				DB114F0526441BAC0071591E /* Cache.swift */,
+				DB114F0526441BAC0071591E /* DefaultCache.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			files = (
 				DB11FDE026457CE300496D12 /* MockTMData.swift in Sources */,
 				DB11FDDE26457CA500496D12 /* MockSession.swift in Sources */,
+				DB26A5B0264AA23800CDABAB /* MockCache.swift in Sources */,
 				DB11FDD92645781600496D12 /* CacheTests.swift in Sources */,
 				DB11FDCF26455F4400496D12 /* ShowingDustTests.swift in Sources */,
 			);
@@ -364,7 +368,7 @@
 				DB114F032643EC740071591E /* CommonCodable.swift in Sources */,
 				DB11FDA82645118900496D12 /* UIView+Extension.swift in Sources */,
 				DB11FDD726456C7600496D12 /* APIError.swift in Sources */,
-				DB114F0626441BAC0071591E /* Cache.swift in Sources */,
+				DB114F0626441BAC0071591E /* DefaultCache.swift in Sources */,
 				DBA3E06526401E5A00DEB36A /* Key.swift in Sources */,
 				DBA3E056263FF8D500DEB36A /* DustViewController+LocationRequest.swift in Sources */,
 				DBA3E05C2640198200DEB36A /* StationCodable.swift in Sources */,
