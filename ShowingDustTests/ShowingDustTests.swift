@@ -158,7 +158,6 @@ class ShowingDustTests: XCTestCase {
                 exp.fulfill()
                 switch result {
                 case .success(let dust):
-                    print(dust)
                     XCTAssert(dust.count > 1)
                 case .failure(let error):
                     XCTFail(error.localizedDescription)

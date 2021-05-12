@@ -40,7 +40,7 @@ enum URLType {
         
         case .dustInforByStation(let stationName, let dateTerm):
             defaultURL += "ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?"
-            defaultURL += "numOfRows=1&"
+            defaultURL += "numOfRows=30&"
             let encodedName = stationName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
             defaultURL += "stationName=\(encodedName)&dataTerm=\(dateTerm.rawValue)&"
 
