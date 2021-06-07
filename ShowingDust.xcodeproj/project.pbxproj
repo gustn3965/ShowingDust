@@ -100,30 +100,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DB114F012643E8660071591E /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */,
-				DB114F07264420810071591E /* DateExtension.swift */,
-				DB11FDA72645118900496D12 /* UIView+Extension.swift */,
-			);
-			name = Extension;
-			sourceTree = "<group>";
-		};
 		DB114F042643EC920071591E /* Asset */ = {
 			isa = PBXGroup;
 			children = (
 				DBA3E041263FED5300DEB36A /* Assets.xcassets */,
 			);
 			name = Asset;
-			sourceTree = "<group>";
-		};
-		DB11FDA9264517F600496D12 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				DB11FDAA264517FD00496D12 /* GradientView.swift */,
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		DB11FDCD26455F4400496D12 /* ShowingDustTests */ = {
@@ -168,27 +150,18 @@
 		DBA3E037263FED5200DEB36A /* ShowingDust */ = {
 			isa = PBXGroup;
 			children = (
+				DBFC2698266E3B83004E5A20 /* ViewController */,
+				DBFC2697266E3B75004E5A20 /* ViewModel */,
+				DBFC2696266E3B63004E5A20 /* Extension */,
+				DBFC2694266E3B50004E5A20 /* View */,
+				DBFC2692266E3B28004E5A20 /* Codable */,
 				DBA3E06326401E5200DEB36A /* KEY */,
 				DB114F042643EC920071591E /* Asset */,
-				DBA3E05D2640199400DEB36A /* Codable */,
-				DB11FDA9264517F600496D12 /* View */,
-				DB114F012643E8660071591E /* Extension */,
-				DBA3E05E26401B8500DEB36A /* ViewModel */,
-				DBA3E057264018FE00DEB36A /* ViewController */,
 				DBA3E0582640190A00DEB36A /* Storyboard */,
 				DBA3E0592640191C00DEB36A /* AppDelegate */,
 				DBA3E046263FED5300DEB36A /* Info.plist */,
 			);
 			path = ShowingDust;
-			sourceTree = "<group>";
-		};
-		DBA3E057264018FE00DEB36A /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DBA3E04C263FEF8400DEB36A /* DustViewController.swift */,
-				DBA3E055263FF8D500DEB36A /* DustViewController+LocationRequest.swift */,
-			);
-			name = ViewController;
 			sourceTree = "<group>";
 		};
 		DBA3E0582640190A00DEB36A /* Storyboard */ = {
@@ -209,7 +182,15 @@
 			name = AppDelegate;
 			sourceTree = "<group>";
 		};
-		DBA3E05D2640199400DEB36A /* Codable */ = {
+		DBA3E06326401E5200DEB36A /* KEY */ = {
+			isa = PBXGroup;
+			children = (
+				DBA3E06426401E5A00DEB36A /* Key.swift */,
+			);
+			name = KEY;
+			sourceTree = "<group>";
+		};
+		DBFC2692266E3B28004E5A20 /* Codable */ = {
 			isa = PBXGroup;
 			children = (
 				DB114F022643EC740071591E /* CommonCodable.swift */,
@@ -217,10 +198,28 @@
 				DBA3E05B2640198200DEB36A /* StationCodable.swift */,
 				DBD0C46926413B5000291011 /* DustCodable.swift */,
 			);
-			name = Codable;
+			path = Codable;
 			sourceTree = "<group>";
 		};
-		DBA3E05E26401B8500DEB36A /* ViewModel */ = {
+		DBFC2694266E3B50004E5A20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB11FDAA264517FD00496D12 /* GradientView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DBFC2696266E3B63004E5A20 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */,
+				DB114F07264420810071591E /* DateExtension.swift */,
+				DB11FDA72645118900496D12 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DBFC2697266E3B75004E5A20 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				DB11FDD626456C7600496D12 /* APIError.swift */,
@@ -231,15 +230,16 @@
 				DBA3E0882640392000DEB36A /* DustViewModel.swift */,
 				DB114F0526441BAC0071591E /* DefaultCache.swift */,
 			);
-			name = ViewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		DBA3E06326401E5200DEB36A /* KEY */ = {
+		DBFC2698266E3B83004E5A20 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DBA3E06426401E5A00DEB36A /* Key.swift */,
+				DBA3E04C263FEF8400DEB36A /* DustViewController.swift */,
+				DBA3E055263FF8D500DEB36A /* DustViewController+LocationRequest.swift */,
 			);
-			name = KEY;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
