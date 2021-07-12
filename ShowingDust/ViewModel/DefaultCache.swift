@@ -12,6 +12,8 @@ protocol Cache {
     func save(object dust: Dust, key: String, completion: (() -> Void)? )
     
     func fetchBy(key: String) -> Dust?
+    
+    func removeData(by key: String)
 }
 
 /**
@@ -64,6 +66,11 @@ final class DefaultCache: Cache {
     private func saveOnDisk(value: CacheValue, key: String) {
         let data = try! JSONEncoder().encode(value)
         UserDefaults.standard.setValue(data, forKey: key)
+    }
+    
+    func removeData(by key: String) {
+        storage.removeAllObjects()
+        UserDefaults.standard.removeObject(forKey: key)
     }
     
     

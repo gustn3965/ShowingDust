@@ -46,7 +46,6 @@ class DustViewController: UIViewController {
                 guard let name = name else {
                     self.stopProgressBar()
                     return }
-
                 self.dustViewModel.getDust(by: name) { data in
                     switch data {
                     case .success(let dust):
@@ -75,6 +74,10 @@ class DustViewController: UIViewController {
         DispatchQueue.excuteOnMainQueue {
             self.hitLabel.text = data 
         }
+    }
+    
+    func removeData(by name: String) {
+        self.dustViewModel.cache.removeData(by: name)
     }
     
     // MARK: - UI Update
