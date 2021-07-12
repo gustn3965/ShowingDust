@@ -20,6 +20,13 @@
 		DB11FDDE26457CA500496D12 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDDD26457CA500496D12 /* MockSession.swift */; };
 		DB11FDE026457CE300496D12 /* MockTMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDDF26457CE300496D12 /* MockTMData.swift */; };
 		DB26A5B0264AA23800CDABAB /* MockCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB26A5AF264AA23800CDABAB /* MockCache.swift */; };
+		DB895F17269C2D27007AAE86 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB895F16269C2D27007AAE86 /* WidgetKit.framework */; };
+		DB895F19269C2D27007AAE86 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB895F18269C2D27007AAE86 /* SwiftUI.framework */; };
+		DB895F1C269C2D27007AAE86 /* ShowingDustWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB895F1B269C2D27007AAE86 /* ShowingDustWidget.swift */; };
+		DB895F1F269C2D28007AAE86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB895F1E269C2D28007AAE86 /* Assets.xcassets */; };
+		DB895F21269C2D28007AAE86 /* ShowingDustWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB895F1D269C2D27007AAE86 /* ShowingDustWidget.intentdefinition */; };
+		DB895F22269C2D28007AAE86 /* ShowingDustWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB895F1D269C2D27007AAE86 /* ShowingDustWidget.intentdefinition */; };
+		DB895F25269C2D28007AAE86 /* ShowingDustWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB895F14269C2D27007AAE86 /* ShowingDustWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E038263FED5200DEB36A /* AppDelegate.swift */; };
 		DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */; };
 		DBA3E042263FED5300DEB36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA3E041263FED5300DEB36A /* Assets.xcassets */; };
@@ -45,7 +52,28 @@
 			remoteGlobalIDString = DBA3E034263FED5200DEB36A;
 			remoteInfo = ShowingDust;
 		};
+		DB895F23269C2D28007AAE86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBA3E02D263FED5200DEB36A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB895F13269C2D27007AAE86;
+			remoteInfo = ShowingDustWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DB895F26269C2D28007AAE86 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DB895F25269C2D28007AAE86 /* ShowingDustWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DB114EFC2643D8A80071591E /* ServerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModel.swift; sourceTree = "<group>"; };
@@ -63,6 +91,13 @@
 		DB11FDDD26457CA500496D12 /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
 		DB11FDDF26457CE300496D12 /* MockTMData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTMData.swift; sourceTree = "<group>"; };
 		DB26A5AF264AA23800CDABAB /* MockCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCache.swift; sourceTree = "<group>"; };
+		DB895F14269C2D27007AAE86 /* ShowingDustWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShowingDustWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB895F16269C2D27007AAE86 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		DB895F18269C2D27007AAE86 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		DB895F1B269C2D27007AAE86 /* ShowingDustWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingDustWidget.swift; sourceTree = "<group>"; };
+		DB895F1D269C2D27007AAE86 /* ShowingDustWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ShowingDustWidget.intentdefinition; sourceTree = "<group>"; };
+		DB895F1E269C2D28007AAE86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB895F20269C2D28007AAE86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBA3E035263FED5200DEB36A /* ShowingDust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowingDust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA3E038263FED5200DEB36A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +122,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB895F11269C2D27007AAE86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB895F19269C2D27007AAE86 /* SwiftUI.framework in Frameworks */,
+				DB895F17269C2D27007AAE86 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,11 +173,33 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		DB895F15269C2D27007AAE86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB895F16269C2D27007AAE86 /* WidgetKit.framework */,
+				DB895F18269C2D27007AAE86 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB895F1A269C2D27007AAE86 /* ShowingDustWidget */ = {
+			isa = PBXGroup;
+			children = (
+				DB895F1B269C2D27007AAE86 /* ShowingDustWidget.swift */,
+				DB895F1D269C2D27007AAE86 /* ShowingDustWidget.intentdefinition */,
+				DB895F1E269C2D28007AAE86 /* Assets.xcassets */,
+				DB895F20269C2D28007AAE86 /* Info.plist */,
+			);
+			path = ShowingDustWidget;
+			sourceTree = "<group>";
+		};
 		DBA3E02C263FED5200DEB36A = {
 			isa = PBXGroup;
 			children = (
 				DBA3E037263FED5200DEB36A /* ShowingDust */,
 				DB11FDCD26455F4400496D12 /* ShowingDustTests */,
+				DB895F1A269C2D27007AAE86 /* ShowingDustWidget */,
+				DB895F15269C2D27007AAE86 /* Frameworks */,
 				DBA3E036263FED5200DEB36A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,6 +209,7 @@
 			children = (
 				DBA3E035263FED5200DEB36A /* ShowingDust.app */,
 				DB11FDCC26455F4400496D12 /* ShowingDustTests.xctest */,
+				DB895F14269C2D27007AAE86 /* ShowingDustWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,6 +330,23 @@
 			productReference = DB11FDCC26455F4400496D12 /* ShowingDustTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DB895F13269C2D27007AAE86 /* ShowingDustWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB895F29269C2D28007AAE86 /* Build configuration list for PBXNativeTarget "ShowingDustWidgetExtension" */;
+			buildPhases = (
+				DB895F10269C2D27007AAE86 /* Sources */,
+				DB895F11269C2D27007AAE86 /* Frameworks */,
+				DB895F12269C2D27007AAE86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShowingDustWidgetExtension;
+			productName = ShowingDustWidgetExtension;
+			productReference = DB895F14269C2D27007AAE86 /* ShowingDustWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		DBA3E034263FED5200DEB36A /* ShowingDust */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBA3E049263FED5300DEB36A /* Build configuration list for PBXNativeTarget "ShowingDust" */;
@@ -270,10 +354,12 @@
 				DBA3E031263FED5200DEB36A /* Sources */,
 				DBA3E032263FED5200DEB36A /* Frameworks */,
 				DBA3E033263FED5200DEB36A /* Resources */,
+				DB895F26269C2D28007AAE86 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB895F24269C2D28007AAE86 /* PBXTargetDependency */,
 			);
 			name = ShowingDust;
 			productName = ShowingDust;
@@ -292,6 +378,9 @@
 					DB11FDCB26455F4400496D12 = {
 						CreatedOnToolsVersion = 12.5;
 						TestTargetID = DBA3E034263FED5200DEB36A;
+					};
+					DB895F13269C2D27007AAE86 = {
+						CreatedOnToolsVersion = 12.5.1;
 					};
 					DBA3E034263FED5200DEB36A = {
 						CreatedOnToolsVersion = 12.5;
@@ -313,6 +402,7 @@
 			targets = (
 				DBA3E034263FED5200DEB36A /* ShowingDust */,
 				DB11FDCB26455F4400496D12 /* ShowingDustTests */,
+				DB895F13269C2D27007AAE86 /* ShowingDustWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -322,6 +412,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB895F12269C2D27007AAE86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB895F1F269C2D28007AAE86 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +448,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB895F10269C2D27007AAE86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB895F21269C2D28007AAE86 /* ShowingDustWidget.intentdefinition in Sources */,
+				DB895F1C269C2D27007AAE86 /* ShowingDustWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBA3E031263FED5200DEB36A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,6 +467,7 @@
 				DBA3E04D263FEF8400DEB36A /* DustViewController.swift in Sources */,
 				DBA3E0892640392000DEB36A /* DustViewModel.swift in Sources */,
 				DBD0C46A26413B5000291011 /* DustCodable.swift in Sources */,
+				DB895F22269C2D28007AAE86 /* ShowingDustWidget.intentdefinition in Sources */,
 				DBA3E06026401B8F00DEB36A /* Session.swift in Sources */,
 				DB114F002643E7FC0071591E /* DispatchQueueExtension.swift in Sources */,
 				DBD0C46C2641486300291011 /* TMCodable.swift in Sources */,
@@ -384,6 +492,11 @@
 			isa = PBXTargetDependency;
 			target = DBA3E034263FED5200DEB36A /* ShowingDust */;
 			targetProxy = DB11FDD126455F4400496D12 /* PBXContainerItemProxy */;
+		};
+		DB895F24269C2D28007AAE86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB895F13269C2D27007AAE86 /* ShowingDustWidgetExtension */;
+			targetProxy = DB895F23269C2D28007AAE86 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -436,6 +549,50 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShowingDust.app/ShowingDust";
+			};
+			name = Release;
+		};
+		DB895F27269C2D28007AAE86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WVLV77R6X7;
+				INFOPLIST_FILE = ShowingDustWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyunsu.park.ShowingDust.ShowingDustWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB895F28269C2D28007AAE86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WVLV77R6X7;
+				INFOPLIST_FILE = ShowingDustWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyunsu.park.ShowingDust.ShowingDustWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -558,6 +715,7 @@
 		DBA3E04A263FED5300DEB36A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -578,6 +736,7 @@
 		DBA3E04B263FED5300DEB36A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -603,6 +762,15 @@
 			buildConfigurations = (
 				DB11FDD426455F4400496D12 /* Debug */,
 				DB11FDD526455F4500496D12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB895F29269C2D28007AAE86 /* Build configuration list for PBXNativeTarget "ShowingDustWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB895F27269C2D28007AAE86 /* Debug */,
+				DB895F28269C2D28007AAE86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
