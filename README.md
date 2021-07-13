@@ -9,9 +9,9 @@
 
 ## Dust Level 1 ~ 4 ( Widget )
 ![widget1](source/widget1.png)
-![widget2](source/widget1.png)
+![widget2](source/widget2.png)
 
-# Usage of Air Korean API  
+# How to use Air Korean API  
 - There is **no Key** to use API in this project. 
 - If you want to use this project, **you should sign up below cite in order to apply API**.
 - https://www.data.go.kr/index.do
