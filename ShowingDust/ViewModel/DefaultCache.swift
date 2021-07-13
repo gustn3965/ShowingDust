@@ -55,7 +55,7 @@ final class DefaultCache: Cache {
             self.saveOnDisk(value: value, key: key)
             completion?()
             // TODO: Test 지우기
-            self.testHit(title: "API Hit! 🥲")
+            self.testHit(title: "🥲 API ")
             
         }
     }

@@ -43,7 +43,6 @@ enum URLType {
             defaultURL += "numOfRows=30&"
             let encodedName = stationName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
             defaultURL += "stationName=\(encodedName)&dataTerm=\(dateTerm.rawValue)&"
-
         }
         defaultURL += lastURL
         return URL(string: defaultURL)

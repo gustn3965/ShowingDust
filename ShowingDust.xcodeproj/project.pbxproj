@@ -27,6 +27,22 @@
 		DB895F21269C2D28007AAE86 /* ShowingDustWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB895F1D269C2D27007AAE86 /* ShowingDustWidget.intentdefinition */; };
 		DB895F22269C2D28007AAE86 /* ShowingDustWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB895F1D269C2D27007AAE86 /* ShowingDustWidget.intentdefinition */; };
 		DB895F25269C2D28007AAE86 /* ShowingDustWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB895F14269C2D27007AAE86 /* ShowingDustWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB895F2A269C2FD7007AAE86 /* DustCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46926413B5000291011 /* DustCodable.swift */; };
+		DB895F2B269C30B5007AAE86 /* StationCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E05B2640198200DEB36A /* StationCodable.swift */; };
+		DB895F2C269C30B5007AAE86 /* TMCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46B2641486300291011 /* TMCodable.swift */; };
+		DB895F2D269C30B5007AAE86 /* CommonCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F022643EC740071591E /* CommonCodable.swift */; };
+		DB895F2E269C33AD007AAE86 /* DustViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E0882640392000DEB36A /* DustViewModel.swift */; };
+		DB895F2F269C33AD007AAE86 /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E08A2640395A00DEB36A /* URLType.swift */; };
+		DB895F30269C33AD007AAE86 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E05F26401B8F00DEB36A /* Session.swift */; };
+		DB895F31269C33AD007AAE86 /* DefaultCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F0526441BAC0071591E /* DefaultCache.swift */; };
+		DB895F32269C33AD007AAE86 /* JSONCodability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E08626402F1300DEB36A /* JSONCodability.swift */; };
+		DB895F33269C33AD007AAE86 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11FDD626456C7600496D12 /* APIError.swift */; };
+		DB895F34269C33AD007AAE86 /* ServerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114EFC2643D8A80071591E /* ServerViewModel.swift */; };
+		DB895F35269C33F6007AAE86 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB114F07264420810071591E /* DateExtension.swift */; };
+		DB895F36269C3408007AAE86 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E06426401E5A00DEB36A /* Key.swift */; };
+		DB895F39269C3F39007AAE86 /* DustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB895F37269C3F00007AAE86 /* DustView.swift */; };
+		DB895F3B269C3F58007AAE86 /* DustEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB895F3A269C3F58007AAE86 /* DustEntry.swift */; };
+		DB895F3D269C3FB6007AAE86 /* ChangeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB895F3C269C3FB6007AAE86 /* ChangeColor.swift */; };
 		DBA3E039263FED5200DEB36A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E038263FED5200DEB36A /* AppDelegate.swift */; };
 		DBA3E03B263FED5200DEB36A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */; };
 		DBA3E042263FED5300DEB36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA3E041263FED5300DEB36A /* Assets.xcassets */; };
@@ -40,6 +56,8 @@
 		DBA3E08726402F1300DEB36A /* JSONCodability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E08626402F1300DEB36A /* JSONCodability.swift */; };
 		DBA3E0892640392000DEB36A /* DustViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E0882640392000DEB36A /* DustViewModel.swift */; };
 		DBA3E08B2640395A00DEB36A /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E08A2640395A00DEB36A /* URLType.swift */; };
+		DBC8830B269D8EC5000C24FD /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8830A269D8EC5000C24FD /* UserDefaults+Extension.swift */; };
+		DBC8830C269D9181000C24FD /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8830A269D8EC5000C24FD /* UserDefaults+Extension.swift */; };
 		DBD0C46A26413B5000291011 /* DustCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46926413B5000291011 /* DustCodable.swift */; };
 		DBD0C46C2641486300291011 /* TMCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46B2641486300291011 /* TMCodable.swift */; };
 /* End PBXBuildFile section */
@@ -98,6 +116,11 @@
 		DB895F1D269C2D27007AAE86 /* ShowingDustWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ShowingDustWidget.intentdefinition; sourceTree = "<group>"; };
 		DB895F1E269C2D28007AAE86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB895F20269C2D28007AAE86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB895F37269C3F00007AAE86 /* DustView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustView.swift; sourceTree = "<group>"; };
+		DB895F3A269C3F58007AAE86 /* DustEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustEntry.swift; sourceTree = "<group>"; };
+		DB895F3C269C3FB6007AAE86 /* ChangeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeColor.swift; sourceTree = "<group>"; };
+		DB9BB42A269D8E2600C61F48 /* ShowingDust.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ShowingDust.entitlements; sourceTree = "<group>"; };
+		DB9BB42B269D8E7200C61F48 /* ShowingDustWidgetExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ShowingDustWidgetExtension.entitlements; sourceTree = "<group>"; };
 		DBA3E035263FED5200DEB36A /* ShowingDust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowingDust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA3E038263FED5200DEB36A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBA3E03A263FED5200DEB36A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +136,7 @@
 		DBA3E08626402F1300DEB36A /* JSONCodability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCodability.swift; sourceTree = "<group>"; };
 		DBA3E0882640392000DEB36A /* DustViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustViewModel.swift; sourceTree = "<group>"; };
 		DBA3E08A2640395A00DEB36A /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
+		DBC8830A269D8EC5000C24FD /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		DBD0C46926413B5000291011 /* DustCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustCodable.swift; sourceTree = "<group>"; };
 		DBD0C46B2641486300291011 /* TMCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				DB895F1B269C2D27007AAE86 /* ShowingDustWidget.swift */,
+				DB895F3C269C3FB6007AAE86 /* ChangeColor.swift */,
+				DB895F3A269C3F58007AAE86 /* DustEntry.swift */,
+				DB895F37269C3F00007AAE86 /* DustView.swift */,
 				DB895F1D269C2D27007AAE86 /* ShowingDustWidget.intentdefinition */,
 				DB895F1E269C2D28007AAE86 /* Assets.xcassets */,
 				DB895F20269C2D28007AAE86 /* Info.plist */,
@@ -196,6 +223,7 @@
 		DBA3E02C263FED5200DEB36A = {
 			isa = PBXGroup;
 			children = (
+				DB9BB42B269D8E7200C61F48 /* ShowingDustWidgetExtension.entitlements */,
 				DBA3E037263FED5200DEB36A /* ShowingDust */,
 				DB11FDCD26455F4400496D12 /* ShowingDustTests */,
 				DB895F1A269C2D27007AAE86 /* ShowingDustWidget */,
@@ -217,6 +245,7 @@
 		DBA3E037263FED5200DEB36A /* ShowingDust */ = {
 			isa = PBXGroup;
 			children = (
+				DB9BB42A269D8E2600C61F48 /* ShowingDust.entitlements */,
 				DBFC2698266E3B83004E5A20 /* ViewController */,
 				DBFC2697266E3B75004E5A20 /* ViewModel */,
 				DBFC2696266E3B63004E5A20 /* Extension */,
@@ -282,6 +311,7 @@
 				DB114EFF2643E7FC0071591E /* DispatchQueueExtension.swift */,
 				DB114F07264420810071591E /* DateExtension.swift */,
 				DB11FDA72645118900496D12 /* UIView+Extension.swift */,
+				DBC8830A269D8EC5000C24FD /* UserDefaults+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -452,8 +482,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB895F2E269C33AD007AAE86 /* DustViewModel.swift in Sources */,
+				DB895F3B269C3F58007AAE86 /* DustEntry.swift in Sources */,
+				DB895F35269C33F6007AAE86 /* DateExtension.swift in Sources */,
+				DB895F34269C33AD007AAE86 /* ServerViewModel.swift in Sources */,
 				DB895F21269C2D28007AAE86 /* ShowingDustWidget.intentdefinition in Sources */,
+				DB895F39269C3F39007AAE86 /* DustView.swift in Sources */,
+				DB895F2C269C30B5007AAE86 /* TMCodable.swift in Sources */,
 				DB895F1C269C2D27007AAE86 /* ShowingDustWidget.swift in Sources */,
+				DB895F31269C33AD007AAE86 /* DefaultCache.swift in Sources */,
+				DB895F33269C33AD007AAE86 /* APIError.swift in Sources */,
+				DB895F32269C33AD007AAE86 /* JSONCodability.swift in Sources */,
+				DBC8830C269D9181000C24FD /* UserDefaults+Extension.swift in Sources */,
+				DB895F2D269C30B5007AAE86 /* CommonCodable.swift in Sources */,
+				DB895F2F269C33AD007AAE86 /* URLType.swift in Sources */,
+				DB895F36269C3408007AAE86 /* Key.swift in Sources */,
+				DB895F2A269C2FD7007AAE86 /* DustCodable.swift in Sources */,
+				DB895F3D269C3FB6007AAE86 /* ChangeColor.swift in Sources */,
+				DB895F2B269C30B5007AAE86 /* StationCodable.swift in Sources */,
+				DB895F30269C33AD007AAE86 /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +522,7 @@
 				DBA3E08B2640395A00DEB36A /* URLType.swift in Sources */,
 				DB114F032643EC740071591E /* CommonCodable.swift in Sources */,
 				DB11FDA82645118900496D12 /* UIView+Extension.swift in Sources */,
+				DBC8830B269D8EC5000C24FD /* UserDefaults+Extension.swift in Sources */,
 				DB11FDD726456C7600496D12 /* APIError.swift in Sources */,
 				DB114F0626441BAC0071591E /* DefaultCache.swift in Sources */,
 				DBA3E06526401E5A00DEB36A /* Key.swift in Sources */,
@@ -557,6 +605,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ShowingDustWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WVLV77R6X7;
 				INFOPLIST_FILE = ShowingDustWidget/Info.plist;
@@ -579,6 +628,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ShowingDustWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WVLV77R6X7;
 				INFOPLIST_FILE = ShowingDustWidget/Info.plist;
@@ -718,6 +768,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ShowingDust/ShowingDust.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WVLV77R6X7;
 				INFOPLIST_FILE = ShowingDust/Info.plist;
@@ -739,6 +790,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ShowingDust/ShowingDust.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WVLV77R6X7;
 				INFOPLIST_FILE = ShowingDust/Info.plist;

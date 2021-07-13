@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WidgetKit
 
 
 /// 서버와 통신하는 `3단계`를 합쳐 `미세먼지 정보`만 가져오도록 하는 객체
@@ -34,6 +35,7 @@ final class DustViewModel {
         }
         
         //캐시에 없다면 API호출
+        reloadWidget()
         tmViewModel.setURL(by: .gettingTMByCity(name))
         tmViewModel.getInformation { resultTM  in
             switch resultTM {
@@ -65,5 +67,9 @@ final class DustViewModel {
                 }
             }
         }
+    }
+    
+    func reloadWidget() {
+        WidgetCenter.shared.reloadAllTimelines()
     }
 }

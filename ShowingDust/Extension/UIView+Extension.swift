@@ -10,8 +10,6 @@ import UIKit
 extension UIView {
 
     func setRoundCorner() {
-        layer.cornerRadius = frame.height/2
-        layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        layer.borderWidth = 2.5
+        layer.cornerRadius = frame.height/4
     }
 }

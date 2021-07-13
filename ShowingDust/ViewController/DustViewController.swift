@@ -41,11 +41,13 @@ class DustViewController: UIViewController {
     /// 2. 지역이름을 토대로 API호출하여 미세먼지 정보 가져온다.
     func fetchDust() {
         DispatchQueue.global().async {
+            
             self.startProgressBar()
             self.getUserLocation { name in
                 guard let name = name else {
                     self.stopProgressBar()
                     return }
+                UserDefaults.shared.saveLocation(name)
                 self.dustViewModel.getDust(by: name) { data in
                     switch data {
                     case .success(let dust):
@@ -57,22 +59,6 @@ class DustViewController: UIViewController {
                     }
                 }
             }
-        }
-    }
-    
-    /// 캐시 또는 디스크에서 가져왔는지 확인하는 test 메서드
-    /// NotifcationCenter 에 등록하여 `Cache` 객체에서 응답을 받아오도록 한다.
-    func testHitCacheOrDisk() {
-        NotificationCenter.default.addObserver(self, selector: #selector(testReceiveHit), name: Notification.Name(rawValue: "CacheHit"), object: nil)
-    }
-
-    /// 캐시 또는 디스크에서 가져왔는지 확인하는 test 메서드
-    /// - 가져올 경우 하단 `hitLabel`에 표시됨.
-    @objc func testReceiveHit(_ notification: Notification) {
-        let key = Notification.Name(rawValue: "CacheHit")
-        guard let data = notification.userInfo?[key] as? String else { return }
-        DispatchQueue.excuteOnMainQueue {
-            self.hitLabel.text = data 
         }
     }
     
@@ -90,7 +76,6 @@ class DustViewController: UIViewController {
         }
         changeBackgroundColor(by: dust.dust)
     }
-    
     
     func startProgressBar() {
         DispatchQueue.excuteOnMainQueue {
@@ -121,6 +106,23 @@ class DustViewController: UIViewController {
             default:
                 self.gradientView.changeGradient(colors: [#colorLiteral(red: 0.22, green: 0.24, blue: 0.27, alpha: 1.00).cgColor,#colorLiteral(red: 0.83, green: 0.25, blue: 0.00, alpha: 1.00).cgColor])
             }
+        }
+    }
+
+    //MARK: Test Label
+    /// 캐시 또는 디스크에서 가져왔는지 확인하는 test 메서드
+    /// NotifcationCenter 에 등록하여 `Cache` 객체에서 응답을 받아오도록 한다.
+    func testHitCacheOrDisk() {
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveTestHit), name: Notification.Name(rawValue: "CacheHit"), object: nil)
+    }
+
+    /// 캐시 또는 디스크에서 가져왔는지 확인하는 test 메서드
+    /// - 가져올 경우 하단 `hitLabel`에 표시됨.
+    @objc func receiveTestHit(_ notification: Notification) {
+        let key = Notification.Name(rawValue: "CacheHit")
+        guard let data = notification.userInfo?[key] as? String else { return }
+        DispatchQueue.excuteOnMainQueue {
+            self.hitLabel.text = data
         }
     }
 }
