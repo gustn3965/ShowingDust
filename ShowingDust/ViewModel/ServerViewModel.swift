@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 /// `URLType에 맞는 정보`를 서버에서 가져온다.
 final class ServerViewModel<DataType:Codable> where DataType: ResultCode {
@@ -54,6 +55,21 @@ final class ServerViewModel<DataType:Codable> where DataType: ResultCode {
             case .failure(let error) :
                 completion(.failure(error))
             }
+        }
+    }
+    
+    func rxGetInformation() -> Observable<DataType> {
+        return Observable.create() { [weak self] completion in
+            self?.getInformation { result in
+                switch result {
+                case .success(let data):
+                    completion.onNext(data)
+                    completion.onCompleted()
+                case .failure(let error):
+                    completion.onError(error)
+                }
+            }
+            return Disposables.create()
         }
     }
 }

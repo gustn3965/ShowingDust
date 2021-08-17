@@ -7,6 +7,7 @@
 
 
 import CoreLocation
+import RxSwift
 
 /*
  Location 권한, 정보 획득 관련 메서드 
@@ -22,6 +23,17 @@ extension DustViewController: CLLocationManagerDelegate {
             }
         } else {
             self.stopProgressBar()
+        }
+    }
+    
+    func rxGetUserLcoation() -> Observable<String?> {
+        return Observable.create() { [weak self] completion in
+            self?.getUserLocation(completion: { location in
+                completion.onNext(location)
+                completion.onCompleted()
+            })
+            
+            return Disposables.create()
         }
     }
     

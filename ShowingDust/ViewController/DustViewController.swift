@@ -7,9 +7,11 @@
 
 import UIKit
 import CoreLocation
+import RxSwift
+import RxCocoa
 
 class DustViewController: UIViewController {
-
+    
     @IBOutlet weak var progressBar: UIActivityIndicatorView!
     @IBOutlet weak var dustButton: UIButton!
     @IBOutlet weak var dustLabel: UILabel!
@@ -21,7 +23,7 @@ class DustViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let dustViewModel = DustViewModel()
-    
+    var disposeBag: DisposeBag = DisposeBag()
     
     // MARK: - Method
     override func viewDidLoad() {
@@ -31,7 +33,7 @@ class DustViewController: UIViewController {
         dustButton.setRoundCorner()
         testHitCacheOrDisk()
     }
-
+    
     @IBAction func touchUpGettingDust() {
         fetchDust()
     }
@@ -60,6 +62,25 @@ class DustViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    // TODO: - ⚠️ if location's name is nil, what happend?
+    // stream will be break? or still alive ?
+    // in this case, so Should we use Error ?
+    func rxFetchDust() {
+        startProgressBar()
+        rxGetUserLcoation()
+            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .default))
+            .filter{ $0 != nil }
+            .flatMap{self.dustViewModel.rxGetDust(by: $0!)}
+            .subscribe(onNext: {
+                        self.updateDisplay(dust: $0[0], name: "")
+                        self.stopProgressBar()},
+                       onError: {
+                        print($0)
+                        self.stopProgressBar()
+                       } )
+            .disposed(by: disposeBag)
     }
     
     func removeData(by name: String) {
@@ -108,14 +129,14 @@ class DustViewController: UIViewController {
             }
         }
     }
-
+    
     //MARK: Test Label
     /// 캐시 또는 디스크에서 가져왔는지 확인하는 test 메서드
     /// NotifcationCenter 에 등록하여 `Cache` 객체에서 응답을 받아오도록 한다.
     func testHitCacheOrDisk() {
         NotificationCenter.default.addObserver(self, selector: #selector(receiveTestHit), name: Notification.Name(rawValue: "CacheHit"), object: nil)
     }
-
+    
     /// 캐시 또는 디스크에서 가져왔는지 확인하는 test 메서드
     /// - 가져올 경우 하단 `hitLabel`에 표시됨.
     @objc func receiveTestHit(_ notification: Notification) {

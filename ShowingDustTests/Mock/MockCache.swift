@@ -9,6 +9,9 @@ import Foundation
 @testable import ShowingDust
 
 class MockCache: Cache {
+    func removeData(by key: String) {
+    }
+    
     
     func fetchBy(key: String) -> Dust? {
         return nil

@@ -64,6 +64,7 @@
 		DBCC20B426CBD1630060C96D /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBCC20AF26CBD1630060C96D /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBCC20B526CBD1630060C96D /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCC20B026CBD1630060C96D /* RxCocoa.xcframework */; };
 		DBCC20B626CBD1630060C96D /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBCC20B026CBD1630060C96D /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DBCC20B926CBDD690060C96D /* RxShwoingDustTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC20B826CBDD690060C96D /* RxShwoingDustTest.swift */; };
 		DBD0C46A26413B5000291011 /* DustCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46926413B5000291011 /* DustCodable.swift */; };
 		DBD0C46C2641486300291011 /* TMCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46B2641486300291011 /* TMCodable.swift */; };
 /* End PBXBuildFile section */
@@ -159,6 +160,7 @@
 		DBCC20AE26CBD1630060C96D /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
 		DBCC20AF26CBD1630060C96D /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
 		DBCC20B026CBD1630060C96D /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
+		DBCC20B826CBDD690060C96D /* RxShwoingDustTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxShwoingDustTest.swift; sourceTree = "<group>"; };
 		DBD0C46926413B5000291011 /* DustCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustCodable.swift; sourceTree = "<group>"; };
 		DBD0C46B2641486300291011 /* TMCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +208,7 @@
 			children = (
 				DB11FDDA26457C8200496D12 /* Mock */,
 				DB11FDCE26455F4400496D12 /* ShowingDustTests.swift */,
+				DBCC20B826CBDD690060C96D /* RxShwoingDustTest.swift */,
 				DB11FDD82645781600496D12 /* CacheTests.swift */,
 				DB11FDD026455F4400496D12 /* Info.plist */,
 			);
@@ -504,6 +507,7 @@
 				DB26A5B0264AA23800CDABAB /* MockCache.swift in Sources */,
 				DB11FDD92645781600496D12 /* CacheTests.swift in Sources */,
 				DB11FDCF26455F4400496D12 /* ShowingDustTests.swift in Sources */,
+				DBCC20B926CBDD690060C96D /* RxShwoingDustTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

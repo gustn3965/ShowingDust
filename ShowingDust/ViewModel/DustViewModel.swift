@@ -7,6 +7,7 @@
 
 import Foundation
 import WidgetKit
+import RxSwift
 
 
 /// 서버와 통신하는 `3단계`를 합쳐 `미세먼지 정보`만 가져오도록 하는 객체
@@ -71,5 +72,27 @@ final class DustViewModel {
     
     func reloadWidget() {
         WidgetCenter.shared.reloadAllTimelines()
+    }
+    
+    func rxGetDust(by name: String) -> Observable<[Dust]> {
+        // 캐시에 있는지 우선 확인.
+        if let cached = cache.fetchBy(key: name ) {
+            return Observable.just([cached])
+        }
+        //캐시에 없다면 API호출
+        reloadWidget()
+        tmViewModel.setURL(by: .gettingTMByCity(name))
+        return tmViewModel.rxGetInformation()
+            .flatMap{ tmRoot -> Observable<StationRoot> in
+                self.stationViewModel.setURL(by: .recentStationByTM(tmRoot.tms![0]))
+                return self.stationViewModel.rxGetInformation()
+            }
+            .flatMap{ locationRoot -> Observable<[Dust]> in
+                self.dustViewModel.setURL(by: .dustInforByStation(
+                                            staion: locationRoot.stationlist![0].stationName,
+                                            dateTerm: .day))
+                return self.dustViewModel.rxGetInformation()
+                    .map{$0.dust!.items}
+            }
     }
 }
