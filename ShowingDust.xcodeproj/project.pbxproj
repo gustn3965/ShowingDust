@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -58,6 +58,12 @@
 		DBA3E08B2640395A00DEB36A /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3E08A2640395A00DEB36A /* URLType.swift */; };
 		DBC8830B269D8EC5000C24FD /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8830A269D8EC5000C24FD /* UserDefaults+Extension.swift */; };
 		DBC8830C269D9181000C24FD /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8830A269D8EC5000C24FD /* UserDefaults+Extension.swift */; };
+		DBCC20B126CBD1630060C96D /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCC20AE26CBD1630060C96D /* RxRelay.xcframework */; };
+		DBCC20B226CBD1630060C96D /* RxRelay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBCC20AE26CBD1630060C96D /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DBCC20B326CBD1630060C96D /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCC20AF26CBD1630060C96D /* RxSwift.xcframework */; };
+		DBCC20B426CBD1630060C96D /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBCC20AF26CBD1630060C96D /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DBCC20B526CBD1630060C96D /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCC20B026CBD1630060C96D /* RxCocoa.xcframework */; };
+		DBCC20B626CBD1630060C96D /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBCC20B026CBD1630060C96D /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBD0C46A26413B5000291011 /* DustCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46926413B5000291011 /* DustCodable.swift */; };
 		DBD0C46C2641486300291011 /* TMCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C46B2641486300291011 /* TMCodable.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +95,19 @@
 				DB895F25269C2D28007AAE86 /* ShowingDustWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBCC20B726CBD1630060C96D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DBCC20B226CBD1630060C96D /* RxRelay.xcframework in Embed Frameworks */,
+				DBCC20B426CBD1630060C96D /* RxSwift.xcframework in Embed Frameworks */,
+				DBCC20B626CBD1630060C96D /* RxCocoa.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -137,6 +156,9 @@
 		DBA3E0882640392000DEB36A /* DustViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustViewModel.swift; sourceTree = "<group>"; };
 		DBA3E08A2640395A00DEB36A /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
 		DBC8830A269D8EC5000C24FD /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		DBCC20AE26CBD1630060C96D /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
+		DBCC20AF26CBD1630060C96D /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		DBCC20B026CBD1630060C96D /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		DBD0C46926413B5000291011 /* DustCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustCodable.swift; sourceTree = "<group>"; };
 		DBD0C46B2641486300291011 /* TMCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +184,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCC20B126CBD1630060C96D /* RxRelay.xcframework in Frameworks */,
+				DBCC20B326CBD1630060C96D /* RxSwift.xcframework in Frameworks */,
+				DBCC20B526CBD1630060C96D /* RxCocoa.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +225,9 @@
 		DB895F15269C2D27007AAE86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBCC20B026CBD1630060C96D /* RxCocoa.xcframework */,
+				DBCC20AE26CBD1630060C96D /* RxRelay.xcframework */,
+				DBCC20AF26CBD1630060C96D /* RxSwift.xcframework */,
 				DB895F16269C2D27007AAE86 /* WidgetKit.framework */,
 				DB895F18269C2D27007AAE86 /* SwiftUI.framework */,
 			);
@@ -385,6 +413,7 @@
 				DBA3E032263FED5200DEB36A /* Frameworks */,
 				DBA3E033263FED5200DEB36A /* Resources */,
 				DB895F26269C2D28007AAE86 /* Embed App Extensions */,
+				DBCC20B726CBD1630060C96D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
