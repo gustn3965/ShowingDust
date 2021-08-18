@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DBA3E0792640243E00DEB36A"
+               BlueprintIdentifier = "DB11FDCB26455F4400496D12"
                BuildableName = "ShowingDustTests.xctest"
                BlueprintName = "ShowingDustTests"
                ReferencedContainer = "container:ShowingDust.xcodeproj">
@@ -60,6 +60,23 @@
             ReferencedContainer = "container:ShowingDust.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <AdditionalOptions>
+         <AdditionalOption
+            key = "MallocStackLogging"
+            value = ""
+            isEnabled = "YES">
+         </AdditionalOption>
+         <AdditionalOption
+            key = "PrefersMallocStackLoggingLite"
+            value = ""
+            isEnabled = "YES">
+         </AdditionalOption>
+         <AdditionalOption
+            key = "MallocScribble"
+            value = ""
+            isEnabled = "YES">
+         </AdditionalOption>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

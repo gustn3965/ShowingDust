@@ -12,27 +12,42 @@ import RxSwift
 /*
  Location 권한, 정보 획득 관련 메서드 
  */
+
+enum LocationError: Error {
+    case invalid
+}
 extension DustViewController: CLLocationManagerDelegate {
 
-    func getUserLocation(completion: @escaping (String?) -> Void  ) {
+    func getUserLocation(completion: @escaping (Result<String, LocationError>) -> Void ) {
         if checkAuthorization() {
-            guard let loc = locationManager.location else { return }
+            guard let loc = locationManager.location else {
+                completion(.failure(.invalid))
+                return
+            }
             
             convertLocationToGeocode(loc: loc) { str in
-                completion(str)
+                if let str = str {
+                    completion(.success(str))
+                } else {
+                    completion(.failure(.invalid))
+                }
             }
         } else {
             self.stopProgressBar()
         }
     }
     
-    func rxGetUserLcoation() -> Observable<String?> {
+    func rxGetUserLcoation() -> Observable<String> {
         return Observable.create() { [weak self] completion in
-            self?.getUserLocation(completion: { location in
-                completion.onNext(location)
-                completion.onCompleted()
+            self?.getUserLocation(completion: { result in
+                switch result {
+                case .success(let name):
+                    completion.onNext(name)
+                    completion.onCompleted()
+                case .failure(let error):
+                    completion.onError(error)
+                }
             })
-            
             return Disposables.create()
         }
     }
@@ -70,12 +85,13 @@ extension DustViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch locationManager.authorizationStatus {
         case .authorizedAlways:
-            fetchDust()
+            rxFetchDust()
         case .authorizedWhenInUse:
             locationManager.requestAlwaysAuthorization()
-            fetchDust()
+            rxFetchDust()
+            print()
         default:
-            stopProgressBar()
+            rxFetchDust()
             return
         }
     }

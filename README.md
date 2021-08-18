@@ -1,6 +1,8 @@
 
 # Purpose 
 - To show dust information by local location using Air Korean API 
+- This ``rxSwift`` branch is refactoring using RxSwift and RxCocoa 
+    - Async completion is changed to return type by using RxSwift - ``Observable``
 
 ![dust_gif](source/dustgif.gif)
 
@@ -25,6 +27,7 @@
 - In `MVVM`, I splited responsibilties among using API and converting Data. 
 - In order to get low frequency of calling API, I applied **cache**.
 - `Widget Extension`,  `SwiftUI` 
+- RxSwift, RxCocoa 
 
 # Graph 
 ![dustGraph](source/dustGraph.png)

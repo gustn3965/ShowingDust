@@ -48,6 +48,7 @@ struct Dust: Codable {
     var dateTime: String
     var dust: String
     var total: String
+    var name: String?
 
     enum CodingKeys: String, CodingKey {
         case dust = "pm10Value"

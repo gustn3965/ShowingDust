@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-import RxTest
+
 @testable import ShowingDust
 
 class RxShowingDustTests: XCTestCase {
@@ -150,6 +150,7 @@ class RxShowingDustTests: XCTestCase {
                 }
         }
     }
+
     //
     //
     func test_모두_올바른경우에_3가지API모두호출하는_DustViewModel서버통신은_성공한다_() throws {

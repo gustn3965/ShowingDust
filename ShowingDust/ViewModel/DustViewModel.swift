@@ -43,13 +43,13 @@ final class DustViewModel {
             case .failure(let err):
                 completion(.failure(err))
             case .success(let tmRoot):
-
+                
                 self.stationViewModel.setURL(by: .recentStationByTM(tmRoot.tms![0]))
                 self.stationViewModel.getInformation { resultLocation in
                     switch resultLocation {
                     case .failure(let err): completion(.failure(err))
                     case .success(let locationRoot):
-
+                        
                         self.dustViewModel.setURL(by: .dustInforByStation(
                                                     staion: locationRoot.stationlist![0].stationName,
                                                     dateTerm: term))
@@ -82,6 +82,7 @@ final class DustViewModel {
         //캐시에 없다면 API호출
         reloadWidget()
         tmViewModel.setURL(by: .gettingTMByCity(name))
+        
         return tmViewModel.rxGetInformation()
             .flatMap{ tmRoot -> Observable<StationRoot> in
                 self.stationViewModel.setURL(by: .recentStationByTM(tmRoot.tms![0]))
@@ -92,7 +93,15 @@ final class DustViewModel {
                                             staion: locationRoot.stationlist![0].stationName,
                                             dateTerm: .day))
                 return self.dustViewModel.rxGetInformation()
-                    .map{$0.dust!.items}
+                    .map{var items = $0.dust!.items
+                        items[0].name = name
+                        return items }
+            }
+            .map { [weak self] dust in
+                // 캐시 및 디스크에 저장한다.
+                self?.cache.save(object: dust[0],
+                                key: name, completion: nil)
+                return dust
             }
     }
 }

@@ -28,14 +28,32 @@ class DustViewController: UIViewController {
     // MARK: - Method
     override func viewDidLoad() {
         super.viewDidLoad()
-        gradientView.changeGradient(colors: [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)])
         locationManager.delegate = self
-        dustButton.setRoundCorner()
+        setupBackgroundView()
+        setupDustButton()
         testHitCacheOrDisk()
     }
     
+    deinit {
+        print("DustViewController is dead ")
+    }
+    
+    func setupBackgroundView() {
+        gradientView.changeGradient(colors: [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)])
+    }
+    
+    /// Add target using RxCocoa instead of using `touchUpGettingDust()`
+    func setupDustButton() {
+        dustButton.setRoundCorner()
+        dustButton.rx.tap
+            .bind { [weak self] in
+                self?.rxFetchDust()
+            }
+            .disposed(by: disposeBag)
+    }
+    
     @IBAction func touchUpGettingDust() {
-        fetchDust()
+        //        fetchDust()
     }
     
     /// 미세먼지 정보 가져오기.
@@ -43,17 +61,16 @@ class DustViewController: UIViewController {
     /// 2. 지역이름을 토대로 API호출하여 미세먼지 정보 가져온다.
     func fetchDust() {
         DispatchQueue.global().async {
-            
             self.startProgressBar()
-            self.getUserLocation { name in
-                guard let name = name else {
-                    self.stopProgressBar()
-                    return }
+            self.getUserLocation { result in
+                let name = try? result.get()
+                self.stopProgressBar()
+                guard let name = name else { return }
                 UserDefaults.shared.saveLocation(name)
                 self.dustViewModel.getDust(by: name) { data in
                     switch data {
                     case .success(let dust):
-                        self.updateDisplay(dust: dust[0], name: name)
+                        self.updateDisplay(dust: dust[0], name: dust[0].name)
                         self.stopProgressBar()
                     case .failure(let error):
                         print(error)
@@ -64,22 +81,20 @@ class DustViewController: UIViewController {
         }
     }
     
-    // TODO: - ⚠️ if location's name is nil, what happend?
-    // stream will be break? or still alive ?
-    // in this case, so Should we use Error ?
     func rxFetchDust() {
         startProgressBar()
         rxGetUserLcoation()
             .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .default))
-            .filter{ $0 != nil }
-            .flatMap{self.dustViewModel.rxGetDust(by: $0!)}
-            .subscribe(onNext: {
-                        self.updateDisplay(dust: $0[0], name: "")
-                        self.stopProgressBar()},
-                       onError: {
-                        print($0)
-                        self.stopProgressBar()
-                       } )
+            .flatMap{self.dustViewModel.rxGetDust(by: $0)}
+            .subscribe(
+                onNext: { [weak self] in
+                    UserDefaults.shared.saveLocation($0[0].name!)
+                    self?.updateDisplay(dust: $0[0], name: $0[0].name)
+                    self?.stopProgressBar()},
+                onError: { [weak self] in
+                    print("Error is ", $0)
+                    self?.stopProgressBar()
+                } )
             .disposed(by: disposeBag)
     }
     
@@ -88,7 +103,7 @@ class DustViewController: UIViewController {
     }
     
     // MARK: - UI Update
-    func updateDisplay(dust: Dust, name: String ) {
+    func updateDisplay(dust: Dust, name: String? ) {
         DispatchQueue.excuteOnMainQueue {
             self.dustLabel.text = dust.dustText
             self.totalLabel.text = dust.totalText
