@@ -1,6 +1,7 @@
 
 # Purpose 
 - To show dust information by local location using Air Korean API 
+- ⚠️This ``main``branch is not using open source library. if you want to see project that use ``RxSwift``, change branch to ``rxSwift``
 
 ![dust_gif](source/dustgif.gif)
 
